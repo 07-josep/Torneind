@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 'Fortnite';
+    src: url('../../fuentes/Fortnite.ttf') format("truetype");
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::selection {
+    color: #fff;
+    background: #ff7070;
+}
+
+html.YT {
+    background: #e5322e;
+    background: linear-gradient(to bottom, #e5322e, #f84441);
+}
+
+html.TW {
+    background: #9146ff;
+    background: linear-gradient(to bottom, #9146ff, #9e5eff);
+}
+
+html.fondo {
+    background-image: url("../../fotos-web/general/foto-directos.jpg");
+}
+
+html.FB {
+    background: #005fed;
+    background: linear-gradient(to bottom, #002aa2, #005fed);
+}
+
+html {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+html body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    margin: 0;
+}
+
+html body .heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    font-size: 3.5rem;
+    font-weight: 300;
+    font-family: "Fortnite", sans-serif;
+    text-align: center;
+    padding: 2rem 0;
+    width: 150%;
+    margin: 5rem 0 8rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-10%) translateY(-2rem) rotate(-10deg);
+}
+
+html body .plataformas {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+html body .plataformas .plataforma-container {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+html body .plataformas .plataforma.hover,
+html body .plataformas .plataforma.active {
+    transform: translateY(-2rem) scale(1.05);
+}
+
+html body .plataformas .plataforma.hover .plataforma-container,
+html body .plataformas .plataforma.active .plataforma-container {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+html body .plataformas .plataforma {
+    width: 30%;
+    text-align: center;
+    position: relative;
+    transition: 0.25s;
+}
+
+html body .plataformas .plataforma:nth-child(1) {
+    color: #e5322e;
+}
+
+html body .plataformas .plataforma:nth-child(1) .pagina:hover:before {
+    height: 95%;
+    width: 95%;
+}
+
+html body .plataformas .plataforma:nth-child(1) .pagina:hover .fal {
+    color: #e5322e;
+}
+
+html body .plataformas .plataforma:nth-child(2) {
+    color: #9146ff;
+}
+
+html body .plataformas .plataforma:nth-child(2) .pagina:hover:before {
+    height: 95%;
+    width: 95%;
+}
+
+html body .plataformas .plataforma:nth-child(2) .pagina:hover .fal {
+    color: #9146ff;
+}
+
+html body .plataformas .plataforma:nth-child(3) {
+    color: #005fed;
+}
+
+html body .plataformas .plataforma:nth-child(3) .pagina:hover:before {
+    height: 95%;
+    width: 95%;
+}
+
+html body .plataformas .plataforma:nth-child(3) .pagina:hover .fal {
+    color: #005fed;
+}
+
+html body .plataformas .plataforma:hover {
+    cursor: pointer;
+}
+
+html body .plataformas .plataforma .foto-image {
+    height: 15rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+html body .plataformas .plataforma .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    min-height: 12rem;
+}
+
+html body .plataformas .plataforma .nombrePlataforma {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem;
+    letter-spacing: 1px;
+}
+
+html body .plataformas .plataforma .descripcion {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+html body .plataformas .plataforma .rating {
+    font-weight: 600;
+}
+
+html body .plataformas .plataforma .rating .fal {
+    margin-right: 0.5rem;
+}
+
+html body .pagina.active {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+html body .pagina {
+    position: relative;
+    margin: 2rem auto 0;
+    pointer-events: none;
+    opacity: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    border: 2px solid white;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+html body .pagina:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 0;
+    width: 0;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    transition: 0.1s;
+}
+
+html body .pagina .fal {
+    font-size: 1.5rem;
+    transition: 0.25s;
+}
+
+.pill {
+    font-size: 21px;
+    font-family: "Fortnite", sans-serif;
+    padding: 0.5em 1em;
+    margin: 0.25em;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: #dddddd;
+    cursor: pointer;
+}
+
+.pill:not(.pill--selected):hover {
+    background: #ee4949;
+}
+
+@keyframes jumping {
+    50% {
+        transform: translate(0, -5px)
+    }
+    100% {
+        transform: translate(0, -0)
+    }
+}
+
+.icono-vincular {
+    transition: all 5.5s ease;
+    animation: jumping 2s ease-out 0s infinite;
+}
+
+
+
+

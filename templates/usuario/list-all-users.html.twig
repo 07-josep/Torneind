@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{% block title %}Descubrir gente{% endblock %}
+{% block body %}
+    <body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="texto-no-torneos mt-5"> JUEGA, CONECTA, DISFRUTA.</h2>
+                <p>Estos son todos los usuarios de nuestra plataforma. Busca amigos y juega con ellos.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+                <form class="d-flex col-5">
+                    <input name="nombre" class="form-control me-2" type="search" placeholder="Buscar un jugador..." aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Buscar</button>
+                </form>
+
+            </nav>
+            {# read and display all flash messages #}
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }} alert-dismissible fade show text-center" role="alert">
+                        <strong class="text-center">{{ message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            {% for usuario in pagination %}
+                <div class="col-2">
+                    <div class="card">
+                        {% if usuario.foto %}
+                            <img src="{{ asset( posters_dir  ~ '/'~ usuario.foto) | imagine_filter('my_thumb') }}" class="card-img-top" alt="foto-perfil-usuario">
+                        {% else %}
+                            <img src="{{ asset('/iconos/foto-perfil-defecto.png') | imagine_filter('my_thumb') }}" class="card-img-top" alt="foto-perfil-usuario">
+                        {% endif %}
+                        <div class="card-body text-center">
+                            <h5 class="card-title texto-buscar-amigos">{{ usuario.nombre }}</h5>
+                            <p class="card-text text-truncate texto-buscar-amigos">{{ usuario.correo }}</p>
+                            <div class="col-12 d-flex justify-content-center">
+                                <a class="link-iconos" href="{{ path('usuario_show', {'id': usuario.id}) }}">
+                                    <button type="button" class="btn btn-primary me-1"><i class="far fa-eye iconos-font"></i>
+                                    </button>
+                                </a>
+
+                                <a class="link-iconos" href="#">
+                                    <button type="button" class="btn btn-success me-1"><i class="fas fa-user-plus iconos-font"></i>
+                                    </button>
+                                </a>
+
+                                <a class="link-iconos" href="{{ path('mensaje_new', {'id': usuario.id}) }}">
+                                    <button type="button" class="btn btn-dark" ><i class="fas fa-envelope iconos-font"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-12">
+                    <h4 class="texto-show-message3">NO HAY USUARIOS REGISTRADOS.</h4>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <img class="foto-no-users" style="width: 1000px" src="{{ asset('/fotos-usuarios/foto-no-users.png') }}" alt="foto-defecto-usuario">
+                </div>
+            {% endfor %}
+            <div class="navigation d-flex justify-content-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+{% endblock %}

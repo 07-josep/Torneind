@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Desinscribirse ❌ ️{% endblock %}
+{% block body %}
+<body id="fondo-inscripcion">
+<div class="container-fluid mt-1">
+    <div class="row justify-content-center mt-4 mb-5 row-form-inscribe">
+        <div class="col-5 mt-5">
+            <div class="card">
+                <div class="card-header text-center texto-no-torneos">
+                    <h1>DESINSCRIPCIÓN<i class="fas fa-check-circle text-success"></i></h1>
+                </div>
+                {% if inscripcion %}
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item texto-success-inscripcion">¿ Estás seguro de cancelar la participación al torneo : <h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.nombre }} ?</h5></li>
+                        </ul>
+                    </div>
+                {% endif %}
+                <div class="col-12 justify-content-between d-flex">
+                    {{ include('torneo/_delete_form.html.twig') }}
+                    <a class="btn btn-danger justify-content-center" href="{{ path('profile') }}"> <i class="fas fa-arrow-circle-left iconos-font"></i> Volver atrás</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

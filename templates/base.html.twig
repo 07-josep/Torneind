@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" lang="es">
+<head>
+    <title>{% block title %}Torneind 🎮{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/logos/sin-fondo.png') }}"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-L+XK540vkePe55E7PAfByfvW0XpsyYpsifTpgh/w8WvH6asVg/c2zqp0EfZfZTbF" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://code.jquery.com/jquery-1.12.4.js'></script>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/css/estilos.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/grids/grid.css') }}">
+    {% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('/js/stats.js') }}"> </script>
+        <script src="{{ asset('/js/config.js') }}"> </script>
+        <script src="{{ asset('/js/cosmeticos.js') }}"> </script>
+
+    {% endblock %}
+</head>
+<header>
+    <div class="container-fluid">
+        <div class="row d-flex">
+            <nav class="navbar navbar-expand-lg navbar-dark barra">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="{{ path('home') }}"><img class="fotologo"
+                                                                           src="{{ asset('/logos/image0.jpeg') }}"
+                                                                           alt="foto-logo"> </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <a class="nav-link" href="{{ path('torneo_index') }}">Torneos</a>
+                        <a class="nav-link" href="{{ path('contact') }}">Soporte</a>
+                        <a class="nav-link" href="{{ path('tienda') }}">Tienda</a>
+                        <a class="nav-link" href="{{ path('cosmeticos') }}">Cosméticos</a>
+                        <a class="nav-link" href="{{ path('nuestroMapa') }}">Nuestro Mapa</a>
+                    </div>
+                    {% if (app.user) %}
+                        <li class="nav-item">
+                            <a href="{{ path('logout') }}" class="btn btn-dark boton-cerrar-sesion text-white">Cerrar
+                                sesión</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('registration') }}"><img class="iconos-nav"
+                                                                                       src="{{ asset('/iconos/icono-registro.png') }}"
+                                                                                       alt="icon-registro">Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('login') }}"><img class="iconos-nav"
+                                                                                src="{{ asset('/iconos/Icono-Iniciar-sesion.png') }}"
+                                                                                alt="icono-iniciar-sesion">Iniciar
+                                sesión</a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('usuario_index') }}"><img class="iconos-nav"
+                                                                                        src="{{ asset('/iconos/icono-gestion-users.png') }}"
+                                                                                        alt="icon-gestion-users">Gestión
+                                Usuarios</a>
+                        </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_USER') %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('usuarios') }}"><img class="iconos-nav" src="{{ asset('/iconos/Icono-gente.png') }}" alt="icon-gestion-users">Descubrir gente</a>
+                        </li>
+                    {% endif %}
+
+                    {% if ( app.user ) %}
+                    {% if ( app.user.foto is null) %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('perfil') }}"><img class="iconos-nav rounded-circle" src="{{ asset('/iconos/foto-perfil-defecto.png') }}" alt="icon-profile"> {{ app.user.nombre }}
+                            </a>
+                        </li>
+                    {% else %}
+                    <li class="nav-item">
+                            <a class="nav-link" href="{{ path('perfil') }}"><img class="iconos-nav rounded-circle" src="{{ asset( posters_dir  ~ '/'~ app.user.foto) }}" alt="icon-profile"> {{ app.user.nombre }}
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<main class="container-fluid g-0">
+    <body>
+    {% block body %}
+    {% endblock %}
+    </body>
+</main>
+<footer>
+    <div class="container-fluid">
+        <div class="row" id="final">
+            <div class="col-3 items">
+                <h3 class="titols-footer"> ¡ No te pierdas nada de nosotros !</h3>
+                <a href="https://www.youtube.com/channel/UCJVF97ZpxwsDhANgg6tAH5Q?view_as=subscriber"
+                   target="_blank"><img class="iconos-footer" src="{{ asset('/iconos/YouTube.png') }}"
+                                        alt="icono-footer"></a>
+
+                <a href="https://es-es.facebook.com/" target="_blank"><img class="iconos-footer"
+                                                                           src="{{ asset('/iconos/FBGaming.png') }}"
+                                                                           alt="icono-footer"
+                    ></a>
+                <a href="https://web.telegram.org/#/login" target="_blank"><img class="iconos-footer"
+                                                                                src="{{ asset('/iconos/telegram.png') }}"
+                                                                                alt="icono-footer"></a>
+            </div>
+            <div class="col-3 items">
+                <h3 class="titols-footer">¡Tambíen existimos fisicamente!</h3>
+                <a href="https://www.google.es/maps/place/IFEMA+-+Feria+de+Madrid/@40.4679236,-3.6201089,17z/data=!3m1!4b1!4m5!3m4!1s0xd422e50d152df37:0x801ce4be7e7a5eec!8m2!3d40.4679236!4d-3.6179202"
+                   target="_blank"><img class="iconos-footer" src="{{ asset('/iconos/mapa2.png') }}" height="50px"
+                                        alt="icono-footer">
+                </a>
+            </div>
+            <div class="col-2 items">
+                <h3 class="titols-footer">Contacta con nosotros.</h3>
+                <a href="{{ path('contact') }}"><img class="iconos-footer" height="45px" src="{{ asset('/iconos/Contacto.png') }}"
+                                                     alt="icono-footer"></a>
+            </div>
+            <div class="col-2 items">
+                <h3 class="titols-footer">Otros</h3>
+                <a href="{{ path('privacidad') }}"><img class="iconos-footer" src="{{ asset('/iconos/Privacidad.png') }}"
+                                 alt="icono-footer"></a>
+                <a href="{{ path('salud') }}"><img class="iconos-footer" src="{{ asset('/iconos/Corazon.png') }}" alt="icono-footer"></a>
+                <a  href="{{ path('sitemap') }}"><img class="iconos-footer" src="{{ asset('/iconos/siteMAP.png') }}" alt="icono-footer"></a>
+                <a  href="{{ path('compartir') }}"><img class="iconos-footer" src="{{ asset('/iconos/icono-compartir2.png') }}" alt="icono-footer-compartir"></a>
+
+            </div>
+
+        </div>
+    </div>
+</footer>
+</html>

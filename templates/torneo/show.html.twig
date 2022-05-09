@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block title %}Torneo 👁️‍{% endblock %}
+{% block body %}
+<body>
+<div class="container-fluid">
+    <div class="row row-view-torneo">
+        <div class="col-1"></div>
+        <div class="col-5">
+            <img class="img-fluid" src="{{ asset( posters_dir  ~ '/'~ torneo.imagen) }}">
+        </div>
+        <div class="col-5 text-center">
+            <h1 class="texto-no-torneos">Ver torneo</h1>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Nombre</th>
+                    <td>{{ torneo.nombre }}</td>
+                </tr>
+                <tr>
+                    <th>Descripcion</th>
+                    <td>{{ torneo.descripcion }}</td>
+                </tr>
+                <tr>
+                    <th>Modalidad</th>
+                    <td>{{ torneo.modalidad.modalidad }}</td>
+                </tr>
+                <tr>
+                    <th>Plataforma</th>
+                    <td>{{ torneo.plataforma.plataforma }}</td>
+                </tr>
+                <tr>
+                    <th>Fecha</th>
+                    <td>{{ torneo.fecha ? torneo.fecha|date('Y-m-d') : '' }} -- {{ torneo.fecha ? torneo.fecha|date('H:m') }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <a href="{{ path('torneo_index') }}"> <button type="button" class="btn btn-dark mb-2"><i class="fas fa-arrow-circle-left"></i> Volver atrás</button></a>
+            {% if (app.user) %}
+            <a href="{{ path('inscripcion_new', {'id': torneo.id}) }}"> <button type="button" class="btn btn-primary mb-2"><i class="fas fa-gamepad"></i> Inscribírse</button></a>
+            {% else %}
+            <a href="{{ path('login') }}"> <button type="button" class="btn btn-primary mb-2"><i class="fas fa-gamepad"></i> Inscribírse</button></a>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('torneo_edit', {'id': torneo.id}) }}"><button type="button" class="btn btn-warning mb-2"><i class="fas fa-pencil-alt iconos-font"></i> Editar torneo</button></a>
+            {{ include('torneo/_delete_form.html.twig') }}
+            {% endif %}
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+</body>
+
+{% endblock %}

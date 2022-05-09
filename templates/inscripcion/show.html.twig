@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}Inscrito con éxito ✔️{% endblock %}
+{% block body %}
+<body>
+<video id="mivideo" loop="true" autoplay="autoplay" controls muted>
+    <source src="{{ asset('/fotos-web/general/videos/fondo-inscripcion-completada.mp4') }}" type="video/mp4"/>
+</video>
+<div class="container-fluid mt-1">
+    <div class="row justify-content-center mt-4 mb-5 row-form-inscribe">
+        <div class="col-5 mt-5">
+            <div class="card">
+                <div class="card-header text-center texto-no-torneos">
+                    <h1>¡ INSCRIPCIÓN COMPLETADA ! <i class="fas fa-check-circle text-success"></i></h1>
+                </div>
+                {% if inscripcion %}
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item texto-success-inscripcion">Te has inscrito al torneo con el nombre de equipo :<h5 class="texto-success-inscripcion-azul">{{ inscripcion.tagname }}</h5> </li>
+                        <li class="list-group-item texto-success-inscripcion">Nombre del torneo : <h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.nombre }}</h5></li>
+                        <li class="list-group-item texto-success-inscripcion">Fecha del torneo :<h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.fecha ? inscripcion.torneo.fecha|date('Y-m-d') : '' }} a las :  {{ inscripcion.torneo.fecha ? inscripcion.torneo.fecha|date('H:m') }}</h5></li>
+                        <li class="list-group-item texto-success-inscripcion">Modalidad y plataforma :<h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.modalidad.modalidad }} /{{ inscripcion.torneo.plataforma.plataforma }}</h5>  </li>
+                    </ul>
+                </div>
+                {% endif %}
+                <div class="col-12 justify-content-between d-flex">
+                        <a href="{{ path('perfil') }}"><button class="btn btn-success"><i class="far fa-eye iconos-font"></i> Ir a ver tus torneos inscritos</button></a>
+                        <a class="btn btn-danger justify-content-center" href="{{ path('torneo_index') }}"> <i class="fas fa-arrow-circle-left iconos-font"></i> Volver atrás</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<body>
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ver mensaje {% endblock %}
+{% block body %}
+    <body>
+    <video id="mivideo" loop="" autoplay="autoplay" controls muted>
+        <source src="{{ asset('/fotos-web/general/videos/Send-Message.mp4') }}" type="video/mp4"/>
+    </video>
+    <div class="container-fluid mt-1">
+        <div class="row justify-content-center mt-1 row-mensaje">
+            <div class="col-5">
+                <div class="card">
+                    {% if mensaje %}
+                        <div class="card-header text-center texto-no-torneos">
+                           MENSAJE PARA : {{ receptor.nombre }}
+                        </div>
+
+                    <div class="card-body">
+                        <h5 class="texto-show-message2">CONTEXTO :</h5>
+                        <div class="dropdown-divider"></div>
+                        <p class="texto-show-message">{{ mensaje.mensaje }}</p>
+                        <h5 class="texto-show-message2">FECHA :</h5>
+                        <div class="dropdown-divider"></div>
+                        <p class="texto-show-message">Envíado el {{ mensaje.fecha ? mensaje.fecha|date('Y-m-d') : '' }} a las {{ mensaje.fecha ? mensaje.fecha|date('H:m') }} Hrs</p>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

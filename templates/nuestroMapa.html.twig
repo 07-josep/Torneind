@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nuestro Mapa ♥{% endblock %}
+{% block body %}
+    <body class="bg-body">
+    <header style="height: 100%">
+        <div id="home" style="margin: 0 8% 0% 8%;">
+            <div style="margin-top: 30%" class="row text-center">
+                <div class="col-md-4 align-self-center">
+                    <h1 class="titulo-torneind" >TORNEIND X FORTNITE</h1>
+                    <p style="color: #fff">
+                        ¡ Ya está aquí ! Torneind he llegado a Fortnite con un mapa interactivo para que seaís los mejores en los torneos ! ¿A que esperas ? ¡ Únete ya !
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="background: linear-gradient(0deg,#000, rgb(15, 15, 15), rgb(0,0,0), #000000);color:#fff;padding-top: 80px;">
+        <div class="container" id="features">
+            <div align="center">
+                <h3>EL MAPA MAS ÚTIL DE TODOS - <span class="letra-epic">EpicGames</span></h3>
+                <p style="margin-top: 40px">
+                    Gracias a este mapa todo el mundo puede mejorar su nivel competitivo y jugar con amigos, sin duda el mejor de todos.
+                </p>
+            </div>
+        </div>
+
+        <div style="margin: 8% 8% 0% 8%;" id="info">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-3 ml-auto text-center">
+                    <h4> Jugadores conectados </h4>
+                    <span class="titulo-torneind">2.256.354</span>
+                    <h4 style="font-size: 1rem;font-weight: 400"> ¡ NÚMEROS RÉCORD !</h4>
+                </div>
+                <div class="col-md-3 ml-auto text-center">
+                    <h4> Valoraciones</h4>
+                    <span class="titulo-torneind">50.325</span>
+                    <h4 style="font-size: 1rem;font-weight: 400"> ¡ EL MÁS VOTADO POR LA COMUNIDAD !</h4>
+                </div>
+                <div class="col-md-3 ml-auto text-center">
+                    <h4>PLATAFORMAS</h4>
+                    <span class="titulo-torneind">TODAS</span>
+                    <h4 style="font-size: 1rem;font-weight: 400">DISPONIBILIDAD HISTÓRICA</h4>
+                </div>
+            </div>
+
+            <div style="margin-top:40px" class="row">
+                <iframe width="1280" height="720" src="https://www.youtube.com/embed/E-Qx7t2qrNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>            </div>
+            <div align="center" style="margin-top: 8%" class="d-flex justify-content-center">
+                <div class="col-md-4 mr-auto">
+                        <h1 class="titulo-torneind">CREADO POR NOSOTROS</h1>
+                        <p> Y actualizado constantemente</p>
+                    <img src="{{ asset('/fotos-web/general/nombre-mapa.png') }}" class="img-fluid">
+
+                </div>
+                <div class="col-md-4">
+                    <h1 class="titulo-torneind">¡ ÚNETE YA !</h1>
+                    <p>
+                        Código : 4718-8833-6490
+                    </p>
+                    <img src="{{ asset('/fotos-web/general/Codigo.png') }}" class="img-fluid">
+                </div>
+                <div class="col-md-4 ml-12">
+                    <h1 class="titulo-torneind"> ¡ NOVEDADES FRESCAS !</h1>
+                    <p>
+                        Que extraño... Alguien ha puesto un castillo en la isla !
+                    </p>
+                    <img src="{{ asset('/fotos-web/general/Castillo.png') }}" class="img-fluid">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

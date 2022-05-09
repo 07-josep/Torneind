@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuario {{ usuario.nombre }} 👁️ {% endblock %}
+
+{% block body %}
+    <body>
+    <div class="container-fluid">
+        <div class="row row-view-torneo">
+            <div class="col-5">
+                {% if usuario.foto %}
+                    <img src="{{ asset( posters_dir  ~ '/'~ usuario.foto) }}" class="card-img-top"
+                         alt="foto-perfil-usuario">
+                {% else %}
+                    <img src="{{ asset('/iconos/foto-perfil-defecto.png') }}" class="card-img-top"
+                         alt="foto-perfil-usuario">
+                {% endif %}
+            </div>
+            <div class="col-5 text-center">
+                <h1 class="texto-no-torneos">Ver al usuario {{ usuario.nombre }}</h1>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ usuario.nombre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>{{ usuario.correo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Contraseña</th>
+                        <td>**************</td>
+                    </tr>
+                    <tr>
+                        <th>Role</th>
+                        <td>{{ usuario.role }}</td>
+                    </tr>
+                    <tr>
+                        <th>Acciones</th>
+                        {% if (app.user) %}
+                        <td>
+                            <a class="link-iconos" href="{{ path('mensaje_new', {'id': usuario.id}) }}">
+                                <button type="button" class="btn btn-outline-dark"><i
+                                            class="fas fa-envelope"></i>
+                                </button>
+                            </a>
+
+                            <a class="link-iconos" href="#">
+                                <button type="button" class="btn btn-outline-dark me-1"><i class="fas fa-user-plus"></i>
+                                </button>
+                            </a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                    </tbody>
+                </table>
+                {% if is_granted('ROLE_ADMIN') %}
+
+                <a href="{{ path('usuario_edit', {'id': usuario.id}) }}">
+                    <button type="button" class="btn btn-warning mb-2"><i class="fas fa-pencil-alt iconos-font"></i>
+                        Editar Usuario
+                    </button>
+                </a>
+                {{ include('usuario/_delete_form.html.twig') }}
+                {% endif %}
+                    <div class="col-12">
+                        <div class="alert alert-info texto-profile" role="alert">
+                            SUS ESTADÍSTICAS 🥇🥈🥉
+                        </div>
+                        <div class="container-fluid text-center">
+                            <div class="row alert alert-warning text-center">
+                                <div class="col-10">
+                                    <h5 class="texto-profile-ver text-truncate"></h5>
+                                </div>
+                                    <div class="col-12">
+                                        <h4 class="texto-no-torneos">¡ NO HA JUGADO TORNEOS !</h4>
+                                    </div>
+                            </div>
+                    </div>
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="col-12">
+                                <div class="alert alert-info texto-profile" role="alert">
+                                    SUS DIRECTOS  📹🔴
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <div class="row alert alert-warning text-center">
+                                    <div class="col-12">
+                                        <h4 class="texto-no-torneos"> ¡ NO HA CREADO CONTENIDO !</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

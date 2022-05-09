@@ -1,0 +1,1152 @@
+@font-face {
+    font-family: 'Fortnite';
+    src: url('../fuentes/Fortnite.ttf') format("truetype");
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::selection {
+    color: #fff;
+    background: #ff7070;
+}
+
+
+/*INICIO HEADER-------------------------------------------------------------------------------------------------------*/
+.nav-link {
+    text-decoration: white !important;
+    color: white !important;
+    font-size: 17px;
+}
+
+.nav-link2 {
+    text-decoration: #000000 !important;
+    color: #000000 !important;
+    font-size: 17px;
+}
+
+
+.fotologo {
+    height: 55px;
+}
+
+.fondos-carrousel {
+    height: 1000px !important;
+    width: auto !important;
+}
+
+.nav-link:hover {
+    color: #ee4949 !important;
+}
+
+.barra {
+    color: black !important;
+    background-color: black !important;
+}
+
+.navbar-toggler {
+    color: #000000 !important;
+    background-color: #ee4949 !important;
+
+}
+/*INICIO DE TEXTO Y FOTOS INICIO--------------------------------------------------------------------------------------*/
+
+.titulo-fortnite {
+    font-weight: bold;
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+}
+
+.texto-no-torneos {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+}
+
+.texto-mostrar-mensajes {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    -webkit-text-fill-color: #ffffff;
+    -webkit-text-stroke: 2px #000000;
+}
+
+.texto-torneind-cabezera{
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    font-family: 'Fortnite';
+    font-weight: bold;
+    font-size: 70px;
+    text-align: center;
+    -webkit-text-fill-color: #84fff5;
+    -webkit-text-stroke: 2px #000000;
+}
+
+.texto-show-message {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    -webkit-text-fill-color: #ffe89c;
+    -webkit-text-stroke: 2px #000000;
+}
+
+.texto-show-message2 {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    -webkit-text-fill-color: #62f7ff;
+    -webkit-text-stroke: 2px #000000;
+}
+
+.texto-show-message3 {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    -webkit-text-fill-color: #ee4949;
+    -webkit-text-stroke: 2px #000000;
+}
+
+
+.texto-buscar-amigos {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    color: #000000;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+.texto-profile {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    color: #000000;
+    font-size: 35px;
+    text-align: center;
+}
+
+.texto-profile-ver {
+    font-family: 'Fortnite';
+    font-weight: bold;
+    color: #000000;
+    font-size: 25px;
+    text-align: center;
+}
+
+.iconos-nav {
+    height: 40px;
+}
+
+.logo-inicio {
+    height: 250px;
+    text-align: center;
+}
+
+.iconos-inicio {
+    text-align: center;
+}
+
+.fotos-inicio {
+    justify-content: space-between !important;
+    display: flex;
+}
+
+.fotos-inicio-link {
+    height: 495px;
+}
+
+.fotos-inicio-link2 {
+    height: 510px;
+}
+
+.fotos-inicio-link2:hover {
+    opacity: 0.3;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    -ms-transition: opacity 500ms;
+    transition: opacity 500ms;
+
+}
+
+.fotos-inicio-link:hover {
+    opacity: 0.3;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    -ms-transition: opacity 500ms;
+    transition: opacity 500ms;
+
+}
+
+
+.im {
+    float: left;
+    width: 28%;
+    margin: 10px;
+    z-index: 2;
+}
+
+.foto iframe {
+    margin: 20px 0 0 0;
+    height: 800px;
+    width: 100%;
+}
+
+.foto p {
+    font-family: 'Fortnite';
+    color: #000000;
+    position: relative;
+    bottom: 60px;
+    left: 260px;
+    top: -335px;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 2;
+    display: inline-block;
+    visibility: hidden;
+
+}
+
+
+.foto img:hover ~ p {
+    visibility: visible;
+}
+
+
+.foto2 iframe {
+    margin: 20px 0 0 0;
+    height: 800px;
+    width: 100%;
+}
+
+.foto2 p {
+    font-family: 'Fortnite';
+    color: #000000;
+    position: relative;
+    bottom: 60px;
+    left: 200px;
+    top: -360px;
+    font-size: 30px;
+    font-weight: bold;
+    z-index: 2;
+    display: inline-block;
+    visibility: hidden;
+
+}
+
+
+.foto2 img:hover ~ p {
+    visibility: visible;
+}
+
+
+/*FINAL DE TEXTO Y FOTOS INICIO---------------------------------------------------------------------------------------*/
+
+/*INICIO FOOTER*/
+footer {
+    padding-top: 20px;
+    height: auto;
+    background-color: #000000;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+#final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.items {
+    text-align: center;
+}
+
+.iconos-footer {
+    height: 50px;
+}
+
+.titols-footer {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px !important;
+    text-align: center;
+}
+
+
+/*FINAL FOOTER--------------------------------------------------------------------------------------------------------*/
+
+td {
+    color: #000000;
+    text-align: center;
+}
+
+th {
+    color: black;
+    text-align: center;
+}
+
+.fotos-ver-torneos {
+    height: 400px;
+}
+
+td {
+    vertical-align: middle;
+}
+
+.boton-buscar:hover {
+    color: rgb(0, 0, 0);
+}
+
+.tabla {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.link-iconos {
+    text-decoration: none !important;
+}
+
+.iconos-font {
+    color: white !important;
+}
+
+.boton-login {
+    background-color: darkmagenta !important;
+}
+
+#fondo-login {
+    background-image: url("../fotos-web/general/foto-prueba-2.PNG");
+    background-repeat: no-repeat;
+    background-color: #ecf0f1;
+}
+
+#fondo-descripcion {
+    background-image: url("../fotos-web/general/Fondo-inscribe.JPG");
+    background-repeat: no-repeat;
+    background-color: #ecf0f1;
+}
+
+.row-form-inscribe {
+    padding-bottom: 300px;
+    padding-top: 100px;
+}
+
+.row-mensaje {
+    padding-bottom: 270px;
+    padding-top: 150px;
+}
+
+.tarjeta-login {
+    opacity: 90%;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-image: linear-gradient(
+            to top left,
+            #7304bd,
+            rgb(0, 0, 0)
+    ) 1 100%;
+    border-width: 5px;
+    border-style: inset;
+}
+
+.row-login {
+    padding-top: 50px;
+    padding-bottom: 240px;
+
+}
+
+.row-view-torneo {
+    padding-bottom: 390px;
+}
+
+.row-contacto {
+    padding-bottom: 150px;
+    padding-top: 50px;
+}
+
+.row2 {
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.texto-success-inscripcion {
+    font-family: 'Fortnite';
+    font-size: 30px;
+}
+
+.texto-success-inscripcion-azul {
+    font-family: 'Fortnite';
+    font-size: 30px;
+    color: #ff77a4;
+}
+
+.campo-fecha {
+    height: 40px;
+}
+
+.boton-cerrar-sesion {
+    background-color: #ee4949 !important;
+    border-color: #1a1a1a;
+}
+
+.boton-cerrar-sesion:hover {
+    border-color: #1a1a1a;
+}
+
+.boton-empezar-jugar {
+    background-color: darkmagenta !important;
+}
+
+.targeta-registrarse {
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-image: linear-gradient(
+            to bottom left,
+            #000000,
+            #ff41fc
+    ) 1 100%;
+    border-width: 5px;
+    border-style: inset;
+}
+
+@keyframes jumping {
+    50% {
+        transform: translate(0, -20px)
+    }
+    100% {
+        transform: translate(0, -0)
+    }
+}
+
+.tarjeta-futuro {
+    transition: all 5.5s ease;
+    animation: jumping 2s ease-out 0s infinite;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-image: linear-gradient(
+            to bottom left,
+            #ee4949,
+            #ee4949
+    ) 1 100%;
+    border-width: 5px;
+    border-style: inset;
+}
+
+
+#boby-registro {
+    background-image: url("../fotos-web/general/foto-prueba-1.PNG");
+    background-repeat: no-repeat;
+    background-color: #ecf0f1;
+}
+
+#fondo-crear-editar-forms {
+    background-image: url("../fotos-web/general/fondo-forms.jpeg");
+    background-repeat: no-repeat;
+    background-color: #ecf0f1;
+}
+
+#fondo-contacto {
+    background: linear-gradient(rgb(237, 73, 74), #000000);
+}
+
+.margin-left-boto-mensajes {
+    margin-left: 5px;
+}
+
+.row-futuro {
+    padding-top: 200px;
+    padding-bottom: 270px;
+}
+
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table a {
+    text-decoration: none;
+}
+
+table .play-button {
+    width: 1.7rem;
+    height: auto;
+    margin-bottom: 2px;
+}
+
+table .info-button {
+    width: 2rem;
+    height: auto;
+}
+
+table .google-maps-icon {
+    width: 2rem;
+    height: auto;
+}
+
+table .song-pic {
+    width: 8rem;
+    height: auto;
+}
+
+table caption {
+    font-size: 3.5em;
+    margin: .5em 0 .75em;
+    font-weight: bold;
+    color: rgb(44, 91, 152);
+}
+
+table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+}
+
+table th,
+table td {
+    padding: .625em;
+    text-align: center;
+}
+
+table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 850px) {
+
+    table {
+        border: 0;
+    }
+
+    table caption {
+        font-size: 3.5em;
+    }
+
+    table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+.row-error {
+    padding-top: 150px;
+    padding-bottom: 300px;
+}
+
+
+
+#mivideo {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -100;
+    background-size: cover;
+}
+
+.card-error {
+    opacity: 0.4;
+}
+
+
+.card-error:hover {
+    opacity: 1.0;
+}
+
+#color-body-compartir{
+    background-color: beige;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.item {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    padding-top: 75px;
+    background: #ccc;
+    text-align: center;
+    color: #FFF;
+    font-size: 3em;
+}
+
+#rowSiteMap{
+    padding-top: 120px;
+}
+.cardSiteMap{
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    position: relative;
+    transition: all .2s ease-in-out;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+    border: 3px;
+    border: #2C3E50;
+    margin-bottom: 100px;
+    opacity: 60%;
+    text-align: center;
+}
+
+.cardSiteMap:hover {
+    box-shadow: 0 10px 20px #ff7070, 0 6px 6px #ff7070;
+}
+
+.aNegra{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    color: #000000;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.aNegra:hover{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    color: #ff7070;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#fondo-site{
+    background-image: url("../fotos-web/general/siteMap.jpeg");
+    background-repeat: no-repeat;
+    background-color: #ecf0f1;
+}
+
+.bg-body{
+    background-image: url("../fotos-web/general/Imagen 2.png");
+    background-repeat: no-repeat;
+    background-color: #000000;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.notthis{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.titulo-torneind{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    -webkit-text-fill-color: #000000;
+    -webkit-text-stroke: 2px #ffffff;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.letra-epic{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    -webkit-text-fill-color: #fffa77;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+/*ESTILOS SALUD--------------------------------------------------------------------------------------------------------*/
+
+.texto-salud{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    -webkit-text-fill-color: #b0ff92;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 55px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+
+.texto-salud2{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    -webkit-text-fill-color: #b0ff92;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 55px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: -150px;
+}
+
+
+#body-salud {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faqs-container{
+    overflow: hidden;
+}
+.faq-singular {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding: 0 30px 0 20px;
+}
+.faq-singular:hover,
+.faq-singular.active{
+    background: #f2f2f2;
+    background-image: linear-gradient(90deg, #b0ff92 0%, #b0ff92 8px, transparent 8px, transparent 100%);
+}
+
+.faq-singular:hover,
+.faq-singular.active{
+    background: #f2f2f2;
+    background-image: linear-gradient(90deg, #b0ff92 0%, #b0ff92 8px, transparent 8px, transparent 100%);
+}
+.faq-singular .faq-question {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    padding: 25px 25px 25px 0px;
+    font-weight: 700;
+    font-size: 24px;
+}
+.faq-singular .faq-question:before {
+    position: absolute;
+    content: "+";
+    color: #808080;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-weight: 700;
+    transition: all .5s;
+}
+.faq-singular.active .faq-question:before {
+    transform: translateY(-50%) rotate(45deg) scale(1.3);
+}
+.faq-answer {
+    display: none;
+    padding-bottom: 20px;
+}
+
+/*ESTILOS PRIVACIDAD--------------------------------------------------------------------------------------------------*/
+
+.texto-privacidad{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    -webkit-text-fill-color: #fcd577;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 55px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.texto-privacidad2{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    -webkit-text-fill-color: #fcd577;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 55px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: -150px;
+}
+
+.faqs-container{
+    overflow: hidden;
+}
+.faq-singular2 {
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    padding: 0 30px 0 20px;
+}
+.faq-singular2:hover,
+.faq-singular2.active{
+    background: #f2f2f2;
+    background-image: linear-gradient(90deg, #fcd577 0%, #fcd577 8px, transparent 8px, transparent 100%);
+}
+.faq-singular2 .faq-question {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    padding: 25px 25px 25px 0px;
+    font-weight: 700;
+    font-size: 24px;
+}
+.faq-singular2 .faq-question:before {
+    position: absolute;
+    content: "+";
+    color: #808080;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-weight: 700;
+    transition: all .5s;
+}
+.faq-singular2.active .faq-question:before {
+    transform: translateY(-50%) rotate(45deg) scale(1.3);
+}
+.faq-answer {
+    display: none;
+    padding-bottom: 20px;
+}
+
+
+/*ESTILOS COOKIES-----------------------------------------------------------------------------------------------------*/
+
+.wrapper {
+    position: absolute;
+    background: #fff;
+    max-width: 365px;
+    border-radius: 15px;
+    text-align: center;
+    padding: 25px 25px 30px 25px;
+    box-shadow: 1px 7px 14px -5px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.wrapper.hide {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+
+
+.wrapper img {
+    max-width: 150px;
+}
+
+.wrapper .content {
+    margin-top: 20px;
+}
+
+.wrapper header {
+    font-family: 'Fortnite';
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.content p {
+    color: #858585;
+    margin: 5px 0 20px 0;
+}
+
+.content .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons .item {
+    margin: 0 10px;
+}
+
+.buttons .button2 {
+    padding: 10px 20px;
+    background: #fcba7f;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.buttons .button3 {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background: #0099d8;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons .button2:hover {
+    transform: scale(0.97);
+}
+.buttons .button3:hover {
+    transform: scale(0.97);
+}
+
+.buttons a {
+    color: #fcba7f;
+}
+/*ESTILOS MODAL-------------------------------------------------------------------------------------------------------*/
+.popup {
+    padding: 7px;
+    min-width: 372px;
+    min-height: 390px;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -185px;
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    z-index: -1;
+    opacity: 0;
+}
+
+.overlay_canvas {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.overlay_popup.popup-open .overlay_canvas,
+.popup-open .popup {
+    opacity: 1;
+    z-index: 11
+}
+
+.close_btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 10px;
+    color: #000;
+    outline: none !important;
+    text-shadow: none;
+    min-width: 1px;
+    font-size: 21px;
+    color: #8C8C8C;
+}
+
+/*ESTILOS COMPARTIR TORNEIND------------------------------------------------------------------------------------------*/
+.titulo-compartir{
+    font-family: 'Fortnite';
+    font-weight: bold;
+    -webkit-text-fill-color: #77fce4;
+    -webkit-text-stroke: 2px #000000;
+    font-size: 55px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.site{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper2{
+    display:flex;
+    height: 60vh;
+    flex-direction: row;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.fab {
+    margin: auto;
+
+}
+.social{
+    color: #FFF;
+    transition: all 0.35s;
+    transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+.social:hover {
+    text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: all ease 0.5s;
+    -moz-transition: all ease-in 0.5s;
+    -webkit-transition: all ease-in 0.5s;
+    -o-transition: all ease-in 0.5s;
+}
+
+.facebook {
+    color:#4267B2;
+}
+
+.twitter {
+    color:#1DA1F2;
+
+}
+.youtube {
+    color:#c4302b;
+}
+.telegram {
+    color:#229ED9;
+}
+
+.instagram {
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+
+}
+.telegram {
+    color: #229ED9;
+}
+.whatsapp {
+    color:#25D366;
+}
+.bg-ico {
+    display: flex;
+    background-color: #FFF;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    margin: 0 5px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28%;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+    opacity: 0.99;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+    text-decoration: none;
+
+}
+.bg-ico:hover{
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.8);
+}
+#facebook:hover {
+    background-color: #4267B2;
+}
+
+#twitter:hover {
+    background-color: #1DA1F2;
+
+}
+#youtube:hover {
+    background-color: #c4302b;
+}
+#pinterest:hover {
+    background-color:#229ED9;
+}
+#instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+
+}
+#telegram:hover {
+    background-color: #229ED9;
+}
+#whatsapp:hover {
+    background-color:#25D366;
+}
+.facebook:hover,
+.twitter:hover,
+.youtube:hover,
+.pinterest:hover,
+.instagram:hover,
+.telegram:hover,
+.whatsapp:hover {
+    color:#fff;
+    transform: scale(1.3);
+}
+
+/*ESTILOS ESTADICTICAS JUGADOR----------------------------------------------------------------------------------------*/
+#canvas1 {
+    margin: 50px auto;
+}
+
+/*ESTILOS VINCULACION CUENTAS-----------------------------------------------------------------------------------------*/

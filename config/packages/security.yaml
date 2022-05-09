@@ -1,0 +1,80 @@
+security:
+    access_denied_url: /denegado
+    encoders:
+        App\Entity\User: bcrypt
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+
+
+
+    # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\Usuario
+                property: nombre
+        # used to reload user from session & other features (e.g. switch_user)
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            form_login:
+                provider: app_user_provider
+                # "login" is the name of the route created previously
+                login_path: login
+                check_path: login
+
+            logout:
+                path: logout
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#the-firewall
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+         - { path: ^/admin, roles: ROLE_ADMIN }
+         - { path: ^/usuario/admin, roles: ROLE_ADMIN }
+         - { path: ^/torneo/new, roles: ROLE_ADMIN }
+         - { path: ^/torneo/edit, roles: ROLE_ADMIN }
+         - { path: ^/torneo/delete, roles: ROLE_ADMIN }
+         - { path: ^/usuario/index, roles: ROLE_ADMIN }
+         - { path: ^/inscripcion, roles: ROLE_USER }
+         - { path: ^/usuarios, roles: ROLE_USER }
+         - { path: ^/perfil, roles: ROLE_USER }
+         - { path: ^/usuario/edit, roles: ROLE_USER }
+         - { path: ^/enviarMensaje, roles: ROLE_USER }
+         - { path: ^/user, roles: ROLE_USER }
+         - { path: ^/mensaje, roles: ROLE_USER }
+         - { path: ^/opinion, roles: ROLE_USER }
+         - { path: ^/vinculation-account, roles: ROLE_USER }
+         - { path: ^/vinculation-stream, roles: ROLE_USER }
+
+
+
+
+
+    role_hierarchy:
+        ROLE_ADMIN:
+            ROLE_USER
+        ROLE_SUPER_ADMIN:
+            [ROLE_ADMIN, ROLE_SUPERADMIN]
+when@test:
+    security:
+        password_hashers:
+            # By default, password hashers are resource intensive and take time. This is
+            # important to generate secure password hashes. In tests however, secure hashes
+            # are not important, waste resources and increase test times. The following
+            # reduces the work factor to the lowest possible values.
+            Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface:
+                algorithm: auto
+                cost: 4 # Lowest possible value for bcrypt
+                time_cost: 3 # Lowest possible value for argon
+                memory_cost: 10 # Lowest possible value for argon

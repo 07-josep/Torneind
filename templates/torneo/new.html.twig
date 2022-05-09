@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nuevo Torneo {% endblock %}
+{% block body %}
+ <body id="fondo-crear-editar-forms">
+    <div class="container-fluid mt-1">
+        <div class="row justify-content-center mt-1">
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-header text-center texto-no-torneos">
+                        CREAR TORNEO
+                    </div>
+                    <div class="card-body">
+                        {{ include('torneo/_form.html.twig') }}
+                     <div class="col-12 justify-content-center d-flex">
+                         <a href="{{ path('torneo_index') }}"></a>
+                        <a class="btn btn-danger justify-content-center" href="{{ path('torneo_index') }}"> <i class="fas fa-arrow-circle-left"></i> Volver atrás</a>
+                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

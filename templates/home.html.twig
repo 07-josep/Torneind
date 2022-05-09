@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <span class="overlay_popup">
+        <div class="overlay_canvas"></div>
+        <div class="popup">
+             <div class="wrapper">
+             <img src="https://e7.pngegg.com/pngimages/555/663/png-clipart-homer-simpson-bart-simpson-moe-szyslak-donuts-desktop-simpsons-heroes-springfield.png">
+              <div class="content">
+                  <header>Consentimiento de Cookies</header>
+                     <p>Este sitio web utiliza cookies para garantizar que obtenga la mejor experiencia.</p>
+                        <div class="buttons">
+                         <button class="button2" onclick="$(this).popupClose();"> Entendido</button>
+                         <a href="{{ path('privacidad') }}" class="button3 link-iconos">Mas información</a>
+                </div>
+             </div>
+          </div>
+        </div>
+    </span>
+    <div class="container-fluid">
+        <div class="col-12 logo-inicio mt-5">
+            <img class="logo-inicio" src="{{ asset('/logos/image2.jpeg') }}" alt="FotoLogo">
+        </div>
+    </div>
+    <div class="col-12 container-fluid">
+        <div class="row">
+            <div class="col-12 iconos-inicio">
+                <a href="https://www.instagram.com/torneind/" target="_blank"><img
+                            src="{{ asset('/iconos/Instagram.png') }}"
+                            alt="FotoLogo1"></a>
+                <a href="https://discord.com/" target="_blank"><img src="{{ asset('/iconos/discord.png') }}"
+                                                                    alt="FotoLogo2"></a>
+                <a href="https://twitter.com/?lang=es" target="_blank"><img src="{{ asset('/iconos/twitter.png') }}"
+                                                                            alt="FotoLogo3"></a>
+                <a href="https://es-es.facebook.com/" target="_blank"><img src="{{ asset('/iconos/FBGaming.png') }}"
+                                                                           alt="FotoLogo4"></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 container">
+        <div class="row">
+            <div class="fotos-inicio">
+                <div class="col foto">
+                    <a href="{{ path('torneo_index') }}"> <img class="fotos-inicio-link"
+                                                               src="{{ asset('/fotos-web/general/fotoTorneos.png') }}"
+                                                               alt="FotoTorneos">
+                        <p>TORNEOS</p>
+                    </a>
+                </div>
+                <div class="col foto">
+                    <a href="{{ path('tienda') }}"> <img class="fotos-inicio-link"
+                                                         src="{{ asset('/fotos-web/general/fotoTienda.png') }}"
+                                                         alt="FotoJuegos">
+                        <p>TIENDA</p>
+                    </a>
+                </div>
+            </div>
+            <div class="fotos-inicio">
+
+                <div class="col foto">
+                    <a href="{{ path('comunidad') }}"> <img class="fotos-inicio-link"
+                                                            src="{{ asset('/fotos-web/general/fotoComunidad.png') }}"
+                                                            alt="FotoComunidad">
+                        <p>COMUNIDAD</p>
+                    </a>
+                </div>
+
+                <div class="col foto">
+                    <a href="{{ path('contact') }}"> <img class="fotos-inicio-link"
+                                                          src="{{ asset('/fotos-web/general/fotoSoporte.png') }}"
+                                                          alt="FotoSoporte">
+                        <p>SOPORTE</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 container">
+        <div class="row">
+            <div class="fotos-inicio">
+                <div class="col foto2">
+                    <a href="{{ path('nuestroMapa') }}"> <img class="fotos-inicio-link2"
+                                                              src="{{ asset('/fotos-web/general/nuestroMapa.png') }}"
+                                                              alt="fotoNuestroMapa">
+                        <p class="p2">NUESTRO MAPA</p>
+                    </a>
+                </div>
+
+                <div class="col foto2">
+                    <a href="{{ path('cosmeticos') }}"> <img class="fotos-inicio-link2"
+                                                             src="{{ asset('/fotos-web/general/cosmeticos.png') }}"
+                                                             alt="fotoCosmeticos">
+                        <p class="p2">COSMÉTICOS</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+
+{% endblock %}
+

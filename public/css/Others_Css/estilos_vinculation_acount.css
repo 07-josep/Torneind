@@ -1,0 +1,243 @@
+@font-face {
+    font-family: 'Fortnite';
+    src: url('../../fuentes/Fortnite.ttf') format("truetype");
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+::selection {
+    color: #fff;
+    background: #ff7070;
+}
+
+html.Epic {
+    background: #000000;
+    background: linear-gradient(to bottom, #313131, #1a1919);
+}
+
+html.Sony {
+    background-image: url("https://www.vgn.it/wp-content/uploads/2019/03/playstationnow_teaser.jpeg");
+}
+
+html.fondo {
+    background-image: url("../../fotos-web/general/foto-vincular-cuentas.jpg");
+}
+
+html.Micro {
+    background: #64ff56;
+    background: linear-gradient(to bottom, #007f00, #3ab100);
+}
+
+html {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+html body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    margin: 0;
+}
+
+html body .heading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    font-size: 3.5rem;
+    font-weight: 300;
+    font-family: "Fortnite", sans-serif;
+    text-align: center;
+    padding: 2rem 0;
+    width: 150%;
+    margin: 5rem 0 8rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(-10%) translateY(-2rem) rotate(-10deg);
+}
+
+html body .cuentas {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+}
+
+html body .cuentas .cuenta-container {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+html body .cuentas .cuenta.hover,
+html body .cuentas .cuenta.active {
+    transform: translateY(-2rem) scale(1.05);
+}
+
+html body .cuentas .cuenta.hover .game-container,
+html body .cuentas .cuenta.active .game-container {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+html body .cuentas .cuenta {
+    width: 30%;
+    text-align: center;
+    position: relative;
+    transition: 0.25s;
+}
+
+html body .cuentas .cuenta:nth-child(1) {
+    color: #27194a;
+}
+
+html body .cuentas .cuenta:nth-child(1) .download:hover:before {
+    height: 95%;
+    width: 95%;
+}
+
+html body .cuentas .cuenta:nth-child(1) .download:hover .fal {
+    color: #27194a;
+}
+
+html body .cuentas .cuenta:nth-child(2) {
+    color: #014090;
+}
+
+html body .cuentas .cuenta:nth-child(2) .download:hover:before {
+    height: 95%;
+    width: 95%;
+}
+
+html body .cuentas .cuenta:nth-child(2) .download:hover .fal {
+    color: #014090;
+}
+
+html body .cuentas .cuenta:nth-child(3) {
+    color: #007f00;
+}
+
+html body .cuentas .cuenta:nth-child(3) .download:hover:before {
+    height: 95%;
+    width: 95%;
+}
+
+html body .cuentas .cuenta:nth-child(3) .download:hover .fal {
+    color: #007f00;
+}
+
+html body .cuentas .cuenta:hover {
+    cursor: pointer;
+}
+
+html body .cuentas .cuenta .cover-image {
+    height: 15rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+html body .cuentas .cuenta .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    min-height: 12rem;
+}
+
+html body .cuentas .cuenta .title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem;
+    letter-spacing: 1px;
+}
+
+html body .cuentas .cuenta .publisher {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+html body .cuentas .cuenta .rating {
+    font-weight: 600;
+}
+
+html body .cuentas .cuenta .rating .fal {
+    margin-right: 0.5rem;
+}
+
+html body .download.active {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+html body .download {
+    position: relative;
+    margin: 2rem auto 0;
+    pointer-events: none;
+    opacity: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    border: 2px solid white;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+html body .download:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 0;
+    width: 0;
+    top: 50%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: white;
+    transition: 0.1s;
+}
+
+html body .download .fal {
+    font-size: 1.5rem;
+    transition: 0.25s;
+}
+
+.pill {
+    font-size: 21px;
+    font-family: "Fortnite", sans-serif;
+    padding: 0.5em 1em;
+    margin: 0.25em;
+    border-radius: 1em;
+    border: none;
+    outline: none;
+    background: #dddddd;
+    cursor: pointer;
+}
+
+.pill:not(.pill--selected):hover {
+    background: #ee4949;
+}
+
+
+@keyframes jumping {
+    50% {
+        transform: translate(0, -5px)
+    }
+    100% {
+        transform: translate(0, -0)
+    }
+}
+
+.icono-vincularr {
+    transition: all 5.5s ease;
+    animation: jumping 2s ease-out 0s infinite;
+}

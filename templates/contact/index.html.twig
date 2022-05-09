@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+{% block title %}Contacto 📲 {% endblock %}
+{% block body %}
+    <body id="fondo-contacto">
+    <div class="container-fluid mt-1">
+        <div class="d-flex justify-content-center mt-1 row-contacto">
+            <div class="col-5">
+                <div class="card">
+                    <div class="card-header text-center texto-no-torneos">
+                        CONTACTO 📲
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(our_form) }}
+                        {{ form_row(our_form.fullName, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_row(our_form.email, {'attr': {'class': 'form-control'}}) }}
+                        <div id="emailHelp" class="form-text">¡ Introduce un correo para que podamos ponernos en contacto contigo !</div>
+                        {{ form_row(our_form.message, {'attr': {'class': 'form-control'}}) }}
+                        <div id="emailHelp" class="form-text">Explica brevemente el motivo.</div>
+                        <div class="form-check mt-3">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Reenviar una copia.
+                            </label>
+                        </div>
+                        <div class="col-12 justify-content-center d-flex">
+                            <input type="submit" class="btn btn-primary justify-content-center mr-2 ml-2"/>
+                        </div>
+                        {{ form_end(our_form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

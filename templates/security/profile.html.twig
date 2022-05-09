@@ -1,0 +1,247 @@
+{% extends 'base.html.twig' %}
+{% block title %}Tú perfil {% endblock %}
+{% block body %}
+    <body>
+    {% if (app.user) %}
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="texto-no-torneos"> Hola {{ app.user.nombre }} :)</h1>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center text-bold">Este es tu perfil.</p>
+                <p class="text-center text-bold">Aquí podrás editar tu información y visualizar tus comentarios en
+                    torneros al
+                    igual que tus inscripciones a torneos. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-5">
+                {# read and display all flash messages #}
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }} alert-dismissible fade show text-center" role="alert">
+                            <strong class="text-center">{{ message }}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- APARTADO INFORMACION------------------------------------------------------------------------------------------>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <div class="col-12">
+                    <div class="alert alert-secondary texto-profile" role="alert">
+                        TU INFORMACIÓN 🔐
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row alert alert-info">
+                        <div class="col-6">
+                            {% if usuario.foto %}
+                                <img src="{{ asset( posters_dir  ~ '/'~ usuario.foto) }}" class="card-img-top"
+                                     alt="foto-perfil-usuario">
+                            {% else %}
+                                <img src="{{ asset('/iconos/foto-perfil-defecto.png') }}" class="card-img-top"
+                                     alt="foto-perfil-usuario">
+                            {% endif %}
+                            <a class="link-iconos" href="{{ path('usuario_normal_edit', {'id': usuario.id}) }}">
+                                <button type="button" class="btn btn-warning "><i
+                                            class="fas fa-pencil-alt iconos-font"></i> Editar información
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <p class="texto-profile-ver"> {{ app.user.nombre }} </p>
+                            <p class="texto-profile-ver"> {{ app.user.correo }} </p>
+                            <p class="texto-profile-ver"> Contraseña ***** </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="col-12">
+                    <div class="alert alert-secondary texto-profile" role="alert">
+                        TUS MENSAJES 🗯️
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row alert alert-info">
+                            <div class="col-12 text-center">
+                                <a class="link-iconos" href="{{ path('enviarMensaje') }}">
+                                    <button type="button" class="btn btn-outline-dark mb-1 mr-2 ml-2"> Nuevo Mensaje
+                                        <i class="far fa-paper-plane"></i>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-6 text-center">
+                                <h5 class="texto-profile-ver">ENVIADOS</h5>
+                                {% for mensaje in mensajes %}
+                                    <p class="texto-mostrar-mensajes text-truncate"> {{ mensaje.mensaje }} </p>
+                                    <div class="d-flex justify-content-center">
+                                        <a class="link-iconos" href="{{ path('mensaje_show', {'id': mensaje.id}) }}">
+                                            <button type="button"
+                                                    class="btn btn-outline-primary">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+                                        <a class="link-iconos">{{ include('mensaje/_delete_form.html.twig') }}</a>
+                                    </div>
+                                {% else %}
+                                    <div class="col-12">
+                                        <div class="dropdown-divider"></div>
+                                        <h4 class="texto-mostrar-mensajes">¡ NO HAS ENVÍADO NADA !</h4>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="col-6 text-center">
+                                <h5 class="texto-profile-ver">RECIBIDOS</h5>
+                                {% for mensaje in mensajes2 %}
+                                    <p class="texto-mostrar-mensajes text-truncate"> {{ mensaje.mensaje }} </p>
+                                    <div class="d-flex justify-content-center">
+                                        <a class="link-iconos" href="{{ path('mensaje_show', {'id': mensaje.id}) }}">
+                                            <button type="button"
+                                                    class="btn btn-outline-primary">
+                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                            </button>
+                                        </a>
+                                        <a class="link-iconos">{{ include('mensaje/_delete_form.html.twig') }}</a>
+                                    </div>
+                                {% else %}
+                                    <div class="col-12">
+                                        <div class="dropdown-divider"></div>
+                                        <h4 class="texto-mostrar-mensajes">¡ NO HAS RECIBIDO NADA !</h4>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+    <!-- APARTADO ESTATS---------------------------------------------------------------------------------------------->
+
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-1"></div>
+                    <div class="col-5">
+                    <div class="col-12">
+                    <div class="alert alert-secondary texto-profile" role="alert">
+                        TUS ESTADÍSTICAS 🥇🥈🥉
+                    </div>
+                    <div class="container-fluid">
+                    <div class="row alert alert-info">
+                        <div class="col-9">
+                        </div>
+                    <div class="col-12">
+                        <h4 class="texto-no-torneos">
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+                            <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+                            <canvas id="canvas1" width="400" height="400"></canvas>
+                        </h4>
+                    </div>
+                </div>
+                </div>
+                </div>
+                        <div class="col-12">
+                            <div class="col-12">
+                                <div class="alert alert-secondary texto-profile" role="alert">
+                                    🔰 TUS CUENTAS 🌐
+                                </div>
+                                <div class="container-fluid">
+                                    <div class="row alert alert-info">
+                                        <div class="col-12">
+                                            {% if usuario.cuenta %}
+                                            <p class="texto-profile-ver"> <i class="fab fa-playstation text-primary"></i> {{ app.user.cuentasony }} </p>
+                                                <p class="texto-profile-ver"> <i class="fab fa-xbox text-success"></i> {{ app.user.cuentamicrosoft }} </p>
+                                                <p class="texto-profile-ver"> <i class="fab fa-delicious"></i> {{ app.user.cuentaepic }} </p>
+                                            {% else %}
+                                            <h4 class="texto-no-torneos"> ¡ NO HAS VINCULADO CUENTAS !</h4>
+                                            {% endif %}
+                                        </div>
+                                        <a class="link-iconos text-center" href="{{ path('vinculation-account') }}">
+                                            <button type="button" class="btn btn-outline-dark mb-1 mr-2 ml-2"> Vincular cuenta
+                                                <i class="fas fa-external-link-square-alt"></i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            <!-- APARTADO INSCRIPCION---------------------------------------------------------------------------------------------->
+            {% if pagination %}
+            <div class="col-5">
+                <div class="col-12">
+                    <div class="alert alert-secondary texto-profile" role="alert">
+                        TUS INSCRIPCIONES A TORNEOS 🏆
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row alert alert-info">
+                            {% for inscripcion in inscripciones %}
+                                <div class="col-9">
+                                    <h1 class="texto-profile-ver">{{ inscripcion.torneo.nombre }}</h1>
+                                </div>
+                                <div class="col-3 d-flex">
+                                    <div class="d-flex">
+                                        <a class="link-iconos"
+                                           href="{{ path('inscripcion_show', {'id': inscripcion.id}) }}">
+                                            <button type="button" class="btn btn-success"><i
+                                                        class="far fa-eye iconos-font"></i></button>
+                                        </a>
+                                        <a class="link-iconos margin-left-boto-mensajes">{{ include('inscripcion/_delete_form.html.twig') }}</a>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <div class="col-12">
+                                    <h4 class="texto-no-torneos">¡ NO ESTÁS INSCRITO A TORNEOS !</h4>
+                                </div> {% endfor %}
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="col-12">
+                        <div class="alert alert-secondary texto-profile" role="alert">
+                            TUS DIRECTOS 📹🎮
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row alert alert-info">
+                                <div class="col-12 text-center">
+                                    {% if usuario.directo %}
+                                        <p class="texto-profile-ver"> <i class="fab fa-youtube text-danger"></i> {{ app.user.directo }} </p>
+                                    {% else %}
+                                        <h4 class="texto-no-torneos"> ¡ NO HAS VINCULADO CUENTAS !</h4>
+                                    {% endif %}
+                                    <a class="link-iconos text-center" href="{{ path('vinculation-stream') }}">
+                                        <button type="button" class="btn btn-outline-danger mb-1 mr-2 ml-2"> Empezar directo
+                                            <i class="fas fa-external-link-square-alt"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

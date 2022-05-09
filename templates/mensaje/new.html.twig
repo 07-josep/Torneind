@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nuevo Mensaje {% endblock %}
+{% block body %}
+<body>
+    <video id="mivideo" loop="" autoplay="autoplay" controls muted>
+        <source src="{{ asset('/fotos-web/general/videos/Send-Message.mp4') }}" type="video/mp4"/>
+    </video>
+    <div class="container-fluid mt-1">
+        <div class="row justify-content-center mt-1 row-mensaje">
+            <div class="col-5">
+                <div class="card">
+                    {% if mensaje %}
+                    <div class="card-header text-center texto-no-torneos">
+                        ENVIAR MENSAJE A : {{ receptor.nombre }}
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        {{ include('mensaje/_form.html.twig') }}
+                        <div class="col-12 justify-content-center d-flex">
+                            <a class="btn btn-danger justify-content-center" href="{{ path('enviarMensaje') }}"> <i class="fas fa-arrow-circle-left"></i> Volver atrás</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

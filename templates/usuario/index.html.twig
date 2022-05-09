@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+{% block title %}Gestión usuarios{% endblock %}
+{% block body %}
+    <body>
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-12 text-end">
+                <h1 class="texto-no-torneos">GESTIÓN DE USUARIOS ( GOD MODE )</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <div class="col- text-center">
+                        <a href="{{ path('usuario_new') }}"><button type="button" class="btn btn-primary"><i class="fas fa-user-plus iconos-font"></i></button></a>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <form method="get" class="row justify-content-center">
+                                <div class="col-12 collapse navbar-collapse ">
+                                    <select name="role" class="form-select">
+                                        <option selected disabled>TODOS</option>
+                                        <option value="ROLE_USER">USUARIO</option>
+                                        <option value="ROLE_ADMIN">ADMINISTRADOR</option>
+                                    </select>
+                                    <button class="btn btn-outline-info boton-buscar" type="submit">Buscar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            {# read and display all flash messages #}
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ label }} alert-dismissible fade show text-center" role="alert">
+                        <strong class="text-center">{{ message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            {% for usuario in pagination %}
+                <div class="col-2">
+                    <div class="card-header">
+                        {{ usuario.role }}
+                    </div>
+                    <div class="card">
+                    {% if usuario.foto %}
+                        <img src="{{ asset( posters_dir  ~ '/'~ usuario.foto) | imagine_filter('my_thumb') }}" class="card-img-top" alt="foto-perfil-usuario">
+                        {% else %}
+                        <img src="{{ asset('/iconos/foto-perfil-defecto.png') | imagine_filter('my_thumb') }}" class="card-img-top" alt="foto-perfil-usuario">
+                    {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ usuario.nombre }}</h5>
+                            <p class="card-text text-truncate">{{ usuario.correo }}</p>
+                            <div class="col-12 d-flex justify-content-center">
+                                <a class="link-iconos" href="{{ path('usuario_show', {'id': usuario.id}) }}">
+                                    <button type="button" class="btn btn-info me-1"><i class="far fa-eye iconos-font"></i>
+                                    </button>
+                                </a>
+                                <a class="link-iconos" href="{{ path('usuario_edit', {'id': usuario.id}) }}">
+                                    <button type="button" class="btn btn-warning me-1"><i
+                                                class="fas fa-user-edit iconos-font"></i>
+                                    </button>
+                                </a>
+
+                                <a class="link-iconos mr-1" href="{{ path('usuario_delete', {'id': usuario.id}) }}">
+                                    {{ include('usuario/_delete_form2.html.twig') }}
+                                </a>
+
+                                <a class="link-iconos" href="#">
+                                    <button type="button" class="btn btn-success margin-left-boto-mensajes"><i class="fas fa-envelope iconos-font"></i></button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-12">
+                    <h4 class="texto-show-message3">NO HAY USUARIOS CON ESTE ROL</h4>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <img class="foto-no-users" style="width: 1000px" src="{{ asset('/fotos-usuarios/foto-no-users.png') }}" alt="foto-defecto-usuario">
+                </div>
+            {% endfor %}
+            <div class="navigation d-flex justify-content-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
+
+
+
