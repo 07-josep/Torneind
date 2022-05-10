@@ -160,6 +160,11 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface, Seri
      */
     private $cuenta_epic;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $retranmision;
+
     public function __construct()
     {
         $this->torneos = new ArrayCollection();
@@ -463,4 +468,17 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface, Seri
 
         return $this;
     }
+
+    public function getRetranmision(): ?string
+    {
+        return $this->retranmision;
+    }
+
+    public function setRetranmision(?string $retranmision): self
+    {
+        $this->retranmision = $retranmision;
+
+        return $this;
+    }
+
 }

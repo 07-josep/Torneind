@@ -124,6 +124,11 @@ class Torneo
      */
     private $opinions;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $retransmision;
+
     public function __construct()
     {
         $this->inscripcions = new ArrayCollection();
@@ -258,11 +263,22 @@ class Torneo
     public function removeOpinion(Opinion $opinion): self
     {
         if ($this->opinions->removeElement($opinion)) {
-            // set the owning side to null (unless already changed)
             if ($opinion->getTorneo() === $this) {
                 $opinion->setTorneo(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRetransmision(): ?string
+    {
+        return $this->retransmision;
+    }
+
+    public function setRetransmision(?string $retransmision): self
+    {
+        $this->retransmision = $retransmision;
 
         return $this;
     }
