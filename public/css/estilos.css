@@ -700,7 +700,7 @@ table th {
 }
 
 .bg-body{
-    background-image: url("../fotos-web/general/Imagen 2.png");
+    background-image: url("../fotos-web/general/nuestroMapa1.PNG");
     background-repeat: no-repeat;
     background-color: #000000;
     max-width: 100%;
@@ -1149,4 +1149,7 @@ table th {
     margin: 50px auto;
 }
 
-/*ESTILOS VINCULACION CUENTAS-----------------------------------------------------------------------------------------*/
+/*ESTILOS CHAT--------------------------------------------------------------------------------------------------------*/
+#body-chat{
+    background-color: beige;
+}

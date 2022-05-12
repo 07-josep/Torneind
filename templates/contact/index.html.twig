@@ -3,33 +3,54 @@
 {% block body %}
     <body id="fondo-contacto">
     <div class="container-fluid mt-1">
-        <div class="d-flex justify-content-center mt-1 row-contacto">
-            <div class="col-5">
-                <div class="card">
-                    <div class="card-header text-center texto-no-torneos">
-                        CONTACTO 📲
+        <div class="row">
+            <div class="d-flex justify-content-center mt-1 row-contacto">
+                <div class="col-12 container-fluid d-flex flex-column flex-lg-row">
+                    <div class="col-8">
+                        <div class="card">
+                            <div class="card-header text-center texto-no-torneos">
+                                CONTACTO 📲
+                            </div>
+                            <div class="card-body">
+                                {{ form_start(our_form) }}
+                                {{ form_row(our_form.fullName, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_row(our_form.email, {'attr': {'class': 'form-control'}}) }}
+                                <div id="emailHelp" class="form-text">¡ Introduce un correo para que podamos ponernos en contacto contigo !</div>
+                                {{ form_row(our_form.message, {'attr': {'class': 'form-control'}}) }}
+                                <div id="emailHelp" class="form-text">Explica brevemente el motivo.</div>
+                                <div class="form-check mt-3">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Reenviar una copia.
+                                    </label>
+                                </div>
+                                <div class="col-12 justify-content-center d-flex">
+                                    <input type="submit" class="btn btn-primary justify-content-center mr-2 ml-2"/>
+                                </div>
+                                {{ form_end(our_form) }}
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        {{ form_start(our_form) }}
-                        {{ form_row(our_form.fullName, {'attr': {'class': 'form-control'}}) }}
-                        {{ form_row(our_form.email, {'attr': {'class': 'form-control'}}) }}
-                        <div id="emailHelp" class="form-text">¡ Introduce un correo para que podamos ponernos en contacto contigo !</div>
-                        {{ form_row(our_form.message, {'attr': {'class': 'form-control'}}) }}
-                        <div id="emailHelp" class="form-text">Explica brevemente el motivo.</div>
-                        <div class="form-check mt-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Reenviar una copia.
-                            </label>
+                    <div class="col-4 text-center ">
+                        <div class="card">
+                            <div class="card-header texto-no-torneos">
+                                CHAT EN LÍNEA 🧑🏻‍🤝‍🧑🏻
+                            </div>
+                            <div class="card-body">
+                                <h5 class="texto-profile-ver mb-5">O si lo prefieres...</h5>
+                                <a class="mt-5" href="{{ path('chat-torneind') }}"><button type="button" class="btn btn-success">
+                                        Chat en línea
+                                    </button></a>
+                            </div>
+
                         </div>
-                        <div class="col-12 justify-content-center d-flex">
-                            <input type="submit" class="btn btn-primary justify-content-center mr-2 ml-2"/>
-                        </div>
-                        {{ form_end(our_form) }}
                     </div>
                 </div>
             </div>
+
+
         </div>
+
     </div>
     </body>
 {% endblock %}

@@ -43,6 +43,14 @@ class HomeController extends AbstractController
     }
 
     /**
+     * @Route("/chat-torneind", name="chat-torneind")
+     */
+    public function chatTorneind(): Response
+    {
+        return $this->render('contact/chat.html.twig');
+    }
+
+    /**
      * @Route("/vinculation-stream", name="vinculation-stream")
      */
     public function vinculationStream(): Response
@@ -71,7 +79,7 @@ class HomeController extends AbstractController
      */
     public function sitemap(): Response
     {
-        return $this->render('sitemap.html.twig');
+        return $this->render('Others/sitemap.html.twig');
     }
 
 
@@ -81,7 +89,7 @@ class HomeController extends AbstractController
      */
     public function nuestroMapa(): Response
     {
-        return $this->render('nuestroMapa.html.twig');
+        return $this->render('Others/nuestroMapa.html.twig');
     }
 
 

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}Site Map 🗺️{% endblock %}
+{% block body %}
+<body id="fondo-site">
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col-12 container-fluid d-flex flex-column flex-lg-row" id="rowSiteMap">
+            <div class="col-5 cardSiteMap">
+                <a class="aNegra" href="{{ path('home') }}">Inicio</a><br><br>
+                <a class="aNegra" href="{{ path('torneo_index') }}">Torneos</a><br><br>
+                <a class="aNegra" href="{{ path('contact') }}">Soporte</a><br><br>
+                <a class="aNegra" href="{{ path('tienda') }}">Tienda</a><br><br>
+                <a class="aNegra" href="{{ path('cosmeticos') }}">Cosméticos</a><br><br>
+            </div>
+            <div class="col-5 cardSiteMap">
+                <a class="aNegra" href="{{ path('nuestroMapa') }}">Nuestro Mapa</a><br><br>
+                <a class="aNegra" href="{{ path('registration') }}">Registrarse</a><br><br>
+                <a class="aNegra" href="{{ path('login') }}">Iniciar Sesión</a><br><br>
+                <a class="aNegra" href="{{ path('contact') }}">Política de privacidad</a><br><br>
+                <a class="aNegra" href="{{ path('salud') }}">Salud</a><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+{% endblock %}
