@@ -19,6 +19,8 @@
                         <li class="list-group-item texto-success-inscripcion">Nombre del torneo : <h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.nombre }}</h5></li>
                         <li class="list-group-item texto-success-inscripcion">Fecha del torneo :<h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.fecha ? inscripcion.torneo.fecha|date('Y-m-d') : '' }} a las :  {{ inscripcion.torneo.fecha ? inscripcion.torneo.fecha|date('H:m') }}</h5></li>
                         <li class="list-group-item texto-success-inscripcion">Modalidad y plataforma :<h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.modalidad.modalidad }} /{{ inscripcion.torneo.plataforma.plataforma }}</h5>  </li>
+                        <li class="list-group-item texto-success-inscripcion">Código de entrada :<h5 class="texto-success-inscripcion-azul">{{ inscripcion.torneo.codigo }}}</h5>  </li>
+
                     </ul>
                 </div>
                 {% endif %}

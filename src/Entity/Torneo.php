@@ -129,6 +129,11 @@ class Torneo
      */
     private $retransmision;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $codigo;
+
     public function __construct()
     {
         $this->inscripcions = new ArrayCollection();
@@ -279,6 +284,18 @@ class Torneo
     public function setRetransmision(?string $retransmision): self
     {
         $this->retransmision = $retransmision;
+
+        return $this;
+    }
+
+    public function getCodigo(): ?string
+    {
+        return $this->codigo;
+    }
+
+    public function setCodigo(string $codigo): self
+    {
+        $this->codigo = $codigo;
 
         return $this;
     }

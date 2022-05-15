@@ -139,52 +139,57 @@
     <div class="container-fluid ">
         <div class="row">
             <div class="col-1"></div>
-                    <div class="col-5">
-                    <div class="col-12">
+            <div class="col-5">
+                <div class="col-12">
                     <div class="alert alert-secondary texto-profile" role="alert">
                         TUS ESTADÍSTICAS 🥇🥈🥉
                     </div>
                     <div class="container-fluid">
-                    <div class="row alert alert-info">
-                        <div class="col-9">
-                        </div>
-                    <div class="col-12">
-                        <h4 class="texto-no-torneos">
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
-                            <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-                            <canvas id="canvas1" width="400" height="400"></canvas>
-                        </h4>
-                    </div>
-                </div>
-                </div>
-                </div>
-                        <div class="col-12">
+                        <div class="row alert alert-info">
+                            <div class="col-9">
+                            </div>
                             <div class="col-12">
-                                <div class="alert alert-secondary texto-profile" role="alert">
-                                    🔰 TUS CUENTAS 🌐
-                                </div>
-                                <div class="container-fluid">
-                                    <div class="row alert alert-info">
-                                        <div class="col-12">
-                                            {% if usuario.cuenta %}
-                                            <p class="texto-profile-ver"> <i class="fab fa-playstation text-primary"></i> {{ app.user.cuentasony }} </p>
-                                                <p class="texto-profile-ver"> <i class="fab fa-xbox text-success"></i> {{ app.user.cuentamicrosoft }} </p>
-                                                <p class="texto-profile-ver"> <i class="fab fa-delicious"></i> {{ app.user.cuentaepic }} </p>
-                                            {% else %}
-                                            <h4 class="texto-no-torneos"> ¡ NO HAS VINCULADO CUENTAS !</h4>
-                                            {% endif %}
-                                        </div>
-
-                                        <a class="link-iconos text-center" href="{{ path('vinculation-account') }}">
-                                            <button type="button" class="btn btn-outline-dark mb-1 mr-2 ml-2"> Vincular cuenta
-                                                <i class="fas fa-external-link-square-alt"></i>
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
+                                <h4 class="texto-no-torneos">
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+                                    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+                                    <canvas id="canvas1" width="400" height="400"></canvas>
+                                </h4>
                             </div>
                         </div>
+                    </div>
                 </div>
+                <div class="col-12">
+                    <div class="col-12">
+                        <div class="alert alert-secondary texto-profile" role="alert">
+                            🔰 TUS CUENTAS 🌐
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row alert alert-info">
+                                <div class="col-12">
+                                    {% if usuario.cuenta %}
+                                        <p class="texto-profile-ver"><i
+                                                    class="fab fa-playstation text-primary"></i> {{ app.user.cuentasony }}
+                                        </p>
+                                        <p class="texto-profile-ver"><i
+                                                    class="fab fa-xbox text-success"></i> {{ app.user.cuentamicrosoft }}
+                                        </p>
+                                        <p class="texto-profile-ver"><i
+                                                    class="fab fa-delicious"></i> {{ app.user.cuentaepic }} </p>
+                                    {% else %}
+                                        <h4 class="texto-no-torneos"> ¡ NO HAS VINCULADO CUENTAS !</h4>
+                                    {% endif %}
+                                </div>
+
+                                <a class="link-iconos text-center" href="{{ path('vinculation-account') }}">
+                                    <button type="button" class="btn btn-outline-dark mb-1 mr-2 ml-2"> Vincular cuenta
+                                        <i class="fas fa-external-link-square-alt"></i>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- APARTADO INSCRIPCION---------------------------------------------------------------------------------------------->
             {% if pagination %}
             <div class="col-5">
@@ -226,12 +231,13 @@
                             <div class="row alert alert-info">
                                 <div class="col-12 text-center">
                                     {% if usuario.directo %}
-                                        <p class="texto-profile-ver"> <i class="fab fa-youtube text-danger"></i> {{ app.user.directo }} </p>
+                                        <p class="texto-profile-ver"><i class="fab fa-youtube text-danger"></i> {{ app.user.directo }} </p>
                                     {% else %}
                                         <h4 class="texto-no-torneos"> ¡ NO HAS VINCULADO CUENTAS !</h4>
                                     {% endif %}
                                     <a class="link-iconos text-center" href="{{ path('vinculation-stream') }}">
-                                        <button type="button" class="btn btn-outline-danger mb-1 mr-2 ml-2"> Empezar directo
+                                        <button type="button" class="btn btn-outline-danger mb-1 mr-2 ml-2"> Empezar
+                                            directo
                                             <i class="fas fa-external-link-square-alt"></i>
                                         </button>
                                     </a>
@@ -241,19 +247,22 @@
                                     <h4 class="texto-mostrar-mensajes">Directo</h4>
                                 </div>
                                 {% if usuario.retranmision %}
-                                    <iframe width="1280" height="720" src="{{ app.user.retranmision }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <iframe width="1280" height="720" src="{{ app.user.retranmision }}"
+                                            title="YouTube video player" frameborder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
                                 {% else %}
 
                                     <h4 class="texto-no-torneos"> ¡ ESTE USUARIO NO ESTA EN DIRECTO !</h4>
                                 {% endif %}
-                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
+    </div>
     </div>
     </body>
 {% endblock %}

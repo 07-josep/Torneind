@@ -111,6 +111,14 @@ class TorneoController extends AbstractController
     }
 
     /**
+     * @Route("/ganador", name="torneo_ganador", methods={"GET", "POST"})
+     */
+    public function ganador(): Response
+    {
+        return $this->renderForm('torneo/ganadores.html.twig', []);
+    }
+
+    /**
      * @Route("/{id}", name="torneo_show", methods={"GET"})
      */
     public function show(Torneo $torneo): Response

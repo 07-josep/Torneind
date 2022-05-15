@@ -66,7 +66,7 @@
                                 </a>
                                 <a class="link-iconos" href="{{ path('usuario_edit', {'id': usuario.id}) }}">
                                     <button type="button" class="btn btn-warning me-1"><i
-                                                class="fas fa-user-edit iconos-font"></i>
+                                                class="fas fa-pencil-alt iconos-font"></i>
                                     </button>
                                 </a>
 
@@ -74,7 +74,7 @@
                                     {{ include('usuario/_delete_form2.html.twig') }}
                                 </a>
 
-                                <a class="link-iconos" href="#">
+                                <a class="link-iconos" href="{{ path('mensaje_new', {'id': usuario.id}) }}">
                                     <button type="button" class="btn btn-success margin-left-boto-mensajes"><i class="fas fa-envelope iconos-font"></i></button>
                                 </a>
                             </div>

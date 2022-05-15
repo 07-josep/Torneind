@@ -53,6 +53,9 @@ class TorneoType extends AbstractType
             ->add('usuario', EntityType::class, ['class' =>
                 Usuario::class, 'choice_label' => 'nombre'],[
                 'required' => true,
+            ])
+            ->add('codigo', TextType::class, [
+                'required' => true,
             ]);
     }
 

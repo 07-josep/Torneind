@@ -53,7 +53,10 @@ class Torneo1Type extends AbstractType
                 'required' => false,
                 'download_label' => 'Descargar la foto.',
                 'imagine_pattern' => 'my_thumb',
-            ]);
+            ])
+        ->add('codigo', TextType::class, [
+            'required' => true,
+    ]);
 
     }
 
