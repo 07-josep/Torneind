@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Inscripcion;
 use App\Entity\Modalidad;
 use App\Entity\Opinion;
 use App\Entity\Torneo;
 use App\Form\Torneo1Type;
+use App\Form\Torneo2Type;
 use App\Repository\InscripcionRepository;
 use App\Repository\ModalidadRepository;
 use App\Repository\OpinionRepository;
@@ -23,7 +25,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
-
 /**
  * @Route("/torneo")
  */
@@ -84,11 +85,6 @@ class TorneoController extends AbstractController
         ]);
     }
 
-
-
-
-
-
     /**
      * @Route("/new", name="torneo_new", methods={"GET", "POST"})
      */
@@ -110,13 +106,48 @@ class TorneoController extends AbstractController
         ]);
     }
 
+
     /**
-     * @Route("/ganador", name="torneo_ganador", methods={"GET", "POST"})
+     * @Route("/winer/{id}", name="torneo_winer", methods={"GET", "POST"})
      */
-    public function ganador(): Response
+    public function winer(Request $request, Torneo $torneo, EntityManagerInterface $entityManager): Response
     {
-        return $this->renderForm('torneo/ganadores.html.twig', []);
+        $form = $this->createForm(Torneo2Type::class, $torneo);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->flush();
+            $this->addFlash(
+                'success',
+                '¡ Ganador asignado correctamente !'
+            );
+            return $this->redirectToRoute('torneo_index', [], Response::HTTP_SEE_OTHER);
+
+        }
+
+        return $this->renderForm('torneo/win.html.twig', [
+            'torneo' => $torneo,
+            'form' => $form,
+        ]);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * @Route("/{id}", name="torneo_show", methods={"GET"})

@@ -44,6 +44,7 @@ security:
          - { path: ^/usuario/admin, roles: ROLE_ADMIN }
          - { path: ^/torneo/new, roles: ROLE_ADMIN }
          - { path: ^/torneo/edit, roles: ROLE_ADMIN }
+         - { path: ^/torneo/winer, roles: ROLE_ADMIN }
          - { path: ^/torneo/ganador, roles: ROLE_ADMIN }
          - { path: ^/torneo/delete, roles: ROLE_ADMIN }
          - { path: ^/usuario/index, roles: ROLE_ADMIN }

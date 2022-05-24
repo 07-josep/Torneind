@@ -303,6 +303,10 @@ footer {
     height: 50px;
 }
 
+.icono-footer-compartir {
+    height: 37px;
+}
+
 .titols-footer {
     text-decoration: none;
     color: #ffffff;
@@ -485,7 +489,7 @@ td {
 }
 
 #fondo-contacto {
-    background: linear-gradient(rgb(237, 73, 74), #000000);
+    background-color: beige;
 }
 
 .margin-left-boto-mensajes {
@@ -696,7 +700,7 @@ table th {
 #fondo-site{
     background-image: url("../fotos-web/general/siteMap.jpeg");
     background-repeat: no-repeat;
-    background-color: #ecf0f1;
+    background-color: #000000;
 }
 
 .bg-body{

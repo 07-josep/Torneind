@@ -31,7 +31,7 @@ class HomeController extends AbstractController
      */
     public function comunidad(): Response
     {
-        return $this->render('comunidad.html.twig');
+        return $this->render('Others/comunidad.html.twig');
     }
 
     /**
@@ -63,7 +63,7 @@ class HomeController extends AbstractController
      */
     public function tienda(): Response
     {
-        return $this->render('tienda.html.twig');
+        return $this->render('tienda/tienda.html.twig');
     }
 
     /**
@@ -71,7 +71,7 @@ class HomeController extends AbstractController
      */
     public function cosmeticos(): Response
     {
-        return $this->render('cosmeticos.html.twig');
+        return $this->render('cosmeticos/cosmeticos.html.twig');
     }
 
     /**
