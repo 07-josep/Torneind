@@ -105,8 +105,6 @@ class TorneoController extends AbstractController
             'form' => $form,
         ]);
     }
-
-
     /**
      * @Route("/winer/{id}", name="torneo_winer", methods={"GET", "POST"})
      */
@@ -125,30 +123,11 @@ class TorneoController extends AbstractController
         }
 
         return $this->renderForm('torneo/win.html.twig', [
+            'inscripcions' => $torneo->getInscripcions(),
             'torneo' => $torneo,
             'form' => $form,
         ]);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * @Route("/{id}", name="torneo_show", methods={"GET"})
      */

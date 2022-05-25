@@ -1,15 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %}Edit Torneo{% endblock %}
+{% block title %}Asignar Ganador 🏆{% endblock %}
 {% block body %}
-    <body id="fondo-crear-editar-forms">
     <div class="container-fluid mt-1">
-        <div class="row justify-content-center mt-1 mb-3">
+        <div class="row justify-content-center mt-1 mb-3  card-win">
             <div class="col-5 mt-5">
-                <div class="card">
+                <div class="card shadow-lg p-3 mb-5rounded">
                     <div class="card-header text-center texto-no-torneos">
-                        ASIGNAR GANADOR
+                        ASIGNAR GANADOR 🏆
                     </div>
                     <div class="card-body">
+                        <div class="col-12 alert alert-info text-center" role="alert">
+                              Asigna un ganador del torneo <span class="nombre-torneo-win">{{ torneo.nombre }}</span>
+                        </div>
                         {{ include('torneo/_form.html.twig', {'button_label': 'Update'}) }}
                         <div class="col-12 justify-content-center d-flex">
                             <a href="{{ path('torneo_index') }}"></a>
@@ -20,6 +22,4 @@
             </div>
         </div>
     </div>
-    </body>
-    <body>
 {% endblock %}

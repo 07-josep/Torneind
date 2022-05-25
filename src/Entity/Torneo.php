@@ -143,6 +143,7 @@ class Torneo
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotNull(message="Tiene que asignar un ganador para el torneo.")
      */
     private $ganador;
 

@@ -1,8 +1,6 @@
 <?php
 namespace App\Form;
-
-
-
+use App\Entity\Inscripcion;
 use App\Entity\Modalidad;
 use App\Entity\Plataforma;
 use App\Entity\Torneo;
@@ -20,9 +18,12 @@ class Torneo2Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('ganador', TextType::class, [
-                'required' => true,
-            ]);
+            ->add('ganador', EntityType::class,
+                ['class' => Torneo::class,
+                    'choice_label' => 'inscripcions',
+                    'placeholder' => 'Seleciona el ganador',
+                    'required' => true,
+                ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -328,7 +328,7 @@ th {
 }
 
 .fotos-ver-torneos {
-    height: 400px;
+    height: 350px;
 }
 
 td {
@@ -486,6 +486,20 @@ td {
     background-image: url("../fotos-web/general/fondo-forms.jpeg");
     background-repeat: no-repeat;
     background-color: #000000;
+}
+
+#body-winners{
+    background-color: beige;
+}
+
+.nombre-torneo-win{
+    font-weight: bold;
+    color: #1a1919;
+}
+
+.card-win{
+    padding-top: 100px;
+    padding-bottom: 150px;
 }
 
 #fondo-contacto {
