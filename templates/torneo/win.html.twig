@@ -12,7 +12,7 @@
                         <div class="col-12 alert alert-info text-center" role="alert">
                               Asigna un ganador del torneo <span class="nombre-torneo-win">{{ torneo.nombre }}</span>
                         </div>
-                        {{ include('torneo/_form.html.twig', {'button_label': 'Update'}) }}
+                        {{ include('torneo/_form.html.twig', {'button_label': 'Asignar Ganador'}) }}
                         <div class="col-12 justify-content-center d-flex">
                             <a href="{{ path('torneo_index') }}"></a>
                             <a class="btn btn-danger justify-content-center" href="{{ path('torneo_index') }}"> <i class="fas fa-arrow-circle-left"></i> Volver atrás</a>

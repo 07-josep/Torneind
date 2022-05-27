@@ -462,17 +462,9 @@ td {
 }
 
 .tarjeta-futuro {
+    background-image: url("../fotos-web/general/fondo-futuro.jpg");
     transition: all 5.5s ease;
     animation: jumping 2s ease-out 0s infinite;
-    border-radius: 5px;
-    background-color: #ffffff;
-    border-image: linear-gradient(
-            to bottom left,
-            #ee4949,
-            #ee4949
-    ) 1 100%;
-    border-width: 5px;
-    border-style: inset;
 }
 
 

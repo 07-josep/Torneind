@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block title %}Todos los torneos 👾{% endblock %}
 {% block body %}
-    <body>
-    <div class="container-fluid mt-2">
+    <div class="container mt-2">
+        <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light bg-light" id="buscador">
-                <div class="container-fluid text-center">
-                    <div class="cool-12 container-fluid text-center">
+                <div class="col-12 container-fluid">
+                    <div class="col-12 d-flex text-center">
                         <form method="get" class="row">
-                            <div class="col-6 collapse navbar-collapse">
+                            <div class="col-10 collapse navbar-collapse">
                                 <select name="categoria" class="form-select" aria-label="Default select example">
                                     <option selected disabled>Filtrar por modalidad</option>
                                     <option value="Solitario">Solitario</option>
@@ -18,11 +18,12 @@
                                     <option value="todas">Todas las modalidades</option>
                                 </select>
                             </div>
-                            <div class="col-6 d-flex text-end">
+                            <div class="col-2 text-start">
                                 <button class="btn btn-outline-info boton-buscar" type="submit">Buscar</button>
                             </div>
                         </form>
                     </div>
+
                 </div>
             </nav>
             {# read and display all flash messages #}
@@ -34,9 +35,9 @@
                     </div>
                 {% endfor %}
             {% endfor %}
+        </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
             <div class="col-12 text-center">
                 <img class="fotos-ver-torneos" alt="foto-torneos-index"
                      src="../fotos-web/torneos/foto-torneos-index-1.png">
@@ -45,9 +46,7 @@
                 <img class="fotos-ver-torneos" alt="foto-torneos-index"
                      src="../fotos-web/torneos/foto-torneos-index-3.png">
             </div>
-        </div>
     </div>
-
     {% if pagination %}
         <div class="col-12 tabla">
             <div class="col-10">
@@ -146,6 +145,4 @@
             </div>
         </div>
     {% endif %}
-    </div>
-    </body>
 {% endblock %}

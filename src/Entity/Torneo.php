@@ -313,10 +313,12 @@ class Torneo
         return $this;
     }
 
+
     public function getGanador(): ?string
     {
         return $this->ganador;
     }
+
 
     public function setGanador(?string $ganador): self
     {
