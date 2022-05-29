@@ -110,7 +110,6 @@ class TorneoController extends AbstractController
      */
     public function winer(Request $request, Torneo $torneo, EntityManagerInterface $entityManager): Response
     {
-
         $form = $this->createForm(Torneo2Type::class, $torneo);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -120,9 +119,7 @@ class TorneoController extends AbstractController
                 '¡ Ganador asignado correctamente !'
             );
             return $this->redirectToRoute('torneo_index', [], Response::HTTP_SEE_OTHER);
-
         }
-
         return $this->renderForm('torneo/win.html.twig', [
             'inscripcions' => $torneo->getInscripcions(),
             'torneo' => $torneo,

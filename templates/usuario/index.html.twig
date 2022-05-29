@@ -50,7 +50,7 @@
                     <div class="card-header">
                         {{ usuario.role }}
                     </div>
-                    <div class="card">
+                    <div class="card-users">
                     {% if usuario.foto %}
                         <img src="{{ asset( posters_dir  ~ '/'~ usuario.foto) | imagine_filter('my_thumb') }}" class="card-img-top" alt="foto-perfil-usuario">
                         {% else %}

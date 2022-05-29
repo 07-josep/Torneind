@@ -50,7 +50,7 @@ class UsuarioController extends AbstractController
     /**
      * @Route("/admin/new", name="usuario_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, UserPasswordHasherInterface $userPasswordHasher): Response
     {
         $usuario = new Usuario();
         $form = $this->createForm(UsuarioType::class, $usuario);
@@ -59,6 +59,12 @@ class UsuarioController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $entityManager->persist($usuario);
+            $usuario->setContrasenya(
+                $userPasswordHasher->hashPassword(
+                    $usuario,
+                    $form->get('contrasenya')->getData()
+                )
+            );
             $entityManager->flush();
             $this->addFlash(
                 'success',

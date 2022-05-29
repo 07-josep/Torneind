@@ -38,7 +38,7 @@
         <div class="row justify-content-center">
             {% for usuario in pagination %}
                 <div class="col-2">
-                    <div class="card">
+                    <div class="card-users">
                         {% if usuario.foto %}
                             <img src="{{ asset( posters_dir  ~ '/'~ usuario.foto) | imagine_filter('my_thumb') }}" class="card-img-top" alt="foto-perfil-usuario">
                         {% else %}
@@ -54,9 +54,24 @@
                                 </a>
 
                                 <a class="link-iconos" href="#">
-                                    <button type="button" class="btn btn-success me-1"><i class="fas fa-user-plus iconos-font"></i>
+                                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-success me-1"><i class="fas fa-user-plus"></i>
                                     </button>
                                 </a>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">¿ Agregar a este usuario como amigo ?</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                                                <button type="button" class="btn btn-success">Enviar solicitud</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <a class="link-iconos" href="{{ path('mensaje_new', {'id': usuario.id}) }}">
                                     <button type="button" class="btn btn-dark" ><i class="fas fa-envelope iconos-font"></i>
