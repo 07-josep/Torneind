@@ -58,10 +58,7 @@ security:
          - { path: ^/opinion, roles: ROLE_USER }
          - { path: ^/vinculation-account, roles: ROLE_USER }
          - { path: ^/vinculation-stream, roles: ROLE_USER }
-
-
-
-
+         - { path: ^/chat, roles: ROLE_USER }
 
     role_hierarchy:
         ROLE_ADMIN:

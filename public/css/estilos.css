@@ -335,8 +335,10 @@ td {
     vertical-align: middle;
 }
 
-.boton-buscar:hover {
+
+.buscar-cosmetico-boton{
     color: rgb(0, 0, 0);
+
 }
 
 .tabla {
@@ -724,6 +726,12 @@ table th {
 
 #fondo-site{
     background-image: url("../fotos-web/general/siteMap.jpeg");
+    background-repeat: no-repeat;
+    background-color: #000000;
+}
+
+#fondo-comunidad{
+    background-image: url("../fotos-web/general/fondo-comunidad.jpg");
     background-repeat: no-repeat;
     background-color: #000000;
 }
@@ -1251,12 +1259,6 @@ h4.nombre {
     transform: scale(1, 1.26);
 }
 
-
-/*PARA SI QUIERES QUE SE MUEVA EL TEXTO, EN CASO DE QUE NO LE QUITAS LO DE animado DE LA CLASE Y AU*/
-
-
-/*------------------------------------------------------*/
-
 p.que-es {
     background: #000724;
     perspective: 800px;
@@ -1280,7 +1282,7 @@ p.que-es {
 }
 
 .legendary {
-    background: radial-gradient(#d37c22, #d37c22);
+    background: radial-gradient(#ffa64f, #ffa64f);
 }
 
 .dark {
@@ -1330,3 +1332,11 @@ p.que-es {
 .common {
     background: radial-gradient(#e66465, #acacac);
 }
+
+/*ESTILOS chat------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+

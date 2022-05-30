@@ -105,14 +105,19 @@ class TorneoController extends AbstractController
             'form' => $form,
         ]);
     }
+
+
+
     /**
      * @Route("/winer/{id}", name="torneo_winer", methods={"GET", "POST"})
      */
     public function winer(Request $request, Torneo $torneo, EntityManagerInterface $entityManager): Response
     {
+
         $form = $this->createForm(Torneo2Type::class, $torneo);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($torneo);
             $entityManager->flush();
             $this->addFlash(
                 'success',
@@ -126,6 +131,16 @@ class TorneoController extends AbstractController
             'form' => $form,
         ]);
     }
+
+
+
+
+
+
+
+
+
+
     /**
      * @Route("/{id}", name="torneo_show", methods={"GET"})
      */

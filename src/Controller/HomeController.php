@@ -47,7 +47,13 @@ class HomeController extends AbstractController
      */
     public function chatTorneind(): Response
     {
-        return $this->render('contact/chat.html.twig');
+        return $this->render('contact/chat.html.twig', [
+            'time' => 'time',
+            'messageOutput' => 'messageOutput',
+            'response' => 'response',
+
+        ]);
+
     }
 
     /**
@@ -72,6 +78,14 @@ class HomeController extends AbstractController
     public function cosmeticos(): Response
     {
         return $this->render('cosmeticos/cosmeticos.html.twig');
+    }
+
+    /**
+     * @Route("/cosmetico", name="cosmetico")
+     */
+    public function cosmetico(): Response
+    {
+        return $this->render('cosmeticos/cosmetico.html.twig');
     }
 
     /**

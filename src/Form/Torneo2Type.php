@@ -19,9 +19,8 @@ class Torneo2Type extends AbstractType
     {
         $builder
             ->add('ganador', EntityType::class,
-                ['class' => Torneo::class,
-                    'multiple' => 'true',
-                    'choice_label' => 'inscripcions',
+                ['class' => Inscripcion::class,
+                    'choice_label' => 'tagname',
                     'placeholder' => 'Seleciona el ganador',
                     'required' => true,
                 ]);

@@ -4,7 +4,6 @@ window.onload = main;
 let arrPoke = [];
 
 function main() {
-    console.log("Conttol Scrool", document.body.scrollHeight - window.innerHeight, window.scrollY)
     // cridar al api
     fetch('https://fortnite-api.com/v2/cosmetics/br')
         .then(response => response.json())
@@ -23,18 +22,16 @@ var contador = 0;
 function cargarLista() {
     contador += 30;
     // recorrer Array
-
-    console.log("CARGAR LISTA: OK");
     for (let i = 0; i < contador; i++) {
         cargarPagina(arrPoke.data[i + contador], i + contador);
     };
 
 }
 const onScroll = () => {
-    console.log("document.body.scrollHeight: " + document.body.scrollHeight);
+   /* console.log("document.body.scrollHeight: " + document.body.scrollHeight);
     console.log("window.innerHeight: " + window.innerHeight);
     console.log("document.body.scrollHeight - window.innerHeight : " + (document.body.scrollHeight - window.innerHeight));
-    console.log("window.scrollY: " + window.scrollY);
+    console.log("window.scrollY: " + window.scrollY);*/
     if (document.body.scrollHeight - window.innerHeight === window.scrollY) {
         cargarLista();
     }
@@ -114,7 +111,7 @@ function cargarPagina(element, ind) {
 
 function abrirCosmetico(id) {
     localStorage.setItem("id", id);
-    window.location.href = "cosmetico.html";
+    window.location.href = "cosmetico";
 }
 
 
@@ -131,7 +128,6 @@ function mostrarCosmeticos() {
         .then(response => response.json())
         .then(data => data.data.forEach(element => {
 
-            console.log(element);
             //elemento padre
             var divPadre = document.getElementById("content");
 

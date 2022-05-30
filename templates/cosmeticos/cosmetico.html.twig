@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+{% block title %}Cosméticos 🥼{% endblock %}
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row mb-5">
+            <div class="col-1"></div>
+            <div class="col-5">
+                <div class="col-12">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active text-center" style="background-color: #ff7070">
+                                <img id="imagen" class="img-fluid" alt="foto-cosmetico">
+                            </div>
+                            <div class="carousel-item text-center" style="background-color: #ff7070">
+                                <img id="imagen2" class="img-fluid" alt="foto-cosmetico">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 text-center">
+                <h1 class="texto-no-torneos">Ver Cosmético
+                    <img id="imagen3" height="50px" alt="foto-cosmetico">
+                </h1>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Nombre</th>
+                        <td id="nombre"></td>
+                    </tr>
+                    <tr>
+                        <th>Descripcion</th>
+                        <td id="descripcion"></td>
+                    </tr>
+                    <tr>
+                        <th>Rareza</th>
+                        <td id="rareza"></td>
+                    </tr>
+                    <tr>
+                        <th>Introducido en el</th>
+                        <td id="text"></td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de entrada</th>
+                        <td id="added"></td>
+                    </tr>
+                    <tr>
+                        <th>Parte del set</th>
+                        <td id="set"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="col-5">
+                <h1 class="texto-no-torneos">HISTORIAL EN LA TIENDA</h1>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Día</th>
+                        <th scope="col">Mes</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Hora</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>25</td>
+                        <td>01</td>
+                        <td>2021</td>
+                        <td>02:00</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>06</td>
+                        <td>2021</td>
+                        <td>02:00</td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td>09</td>
+                        <td>2021</td>
+                        <td>02:00</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>11</td>
+                        <td>2021</td>
+                        <td>02:00</td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>01</td>
+                        <td>2022</td>
+                        <td>02:00</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
