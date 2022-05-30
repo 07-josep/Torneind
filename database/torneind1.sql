@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-02-2022 a las 23:40:40
+-- Tiempo de generación: 30-05-2022 a las 20:07:37
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `torneind-symfony`
+-- Base de datos: `torneind1`
 --
 
 -- --------------------------------------------------------
@@ -38,12 +38,8 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20220205204752', '2022-02-18 14:05:40', 290),
-('DoctrineMigrations\\Version20220215104742', '2022-02-18 14:05:40', 0),
-('DoctrineMigrations\\Version20220215105021', '2022-02-18 14:05:40', 21),
-('DoctrineMigrations\\Version20220216102147', '2022-02-18 14:05:40', 77),
-('DoctrineMigrations\\Version20220217184922', '2022-02-18 14:05:41', 6),
-('DoctrineMigrations\\Version20220218103442', '2022-02-18 14:05:41', 67);
+('DoctrineMigrations\\Version20220530172759', '2022-05-30 19:28:03', 54),
+('DoctrineMigrations\\Version20220530175441', '2022-05-30 19:54:50', 56);
 
 -- --------------------------------------------------------
 
@@ -63,11 +59,10 @@ CREATE TABLE `inscripcion` (
 --
 
 INSERT INTO `inscripcion` (`id`, `usuario_id`, `torneo_id`, `tagname`) VALUES
-(2, 1, 8, 'HJosepo'),
-(4, 1, 8, 'ALEX'),
-(8, 1, 10, 'HJosepo'),
-(9, 1, 9, 'ALEX'),
-(10, 1, 8, 'Equipo alpha');
+(2, 1, 9, 'Josep'),
+(3, 1, 8, 'TheKillerMine'),
+(4, 1, 8, 'yujyujyujy'),
+(5, 1, 8, 'Equipo alpha');
 
 -- --------------------------------------------------------
 
@@ -77,9 +72,9 @@ INSERT INTO `inscripcion` (`id`, `usuario_id`, `torneo_id`, `tagname`) VALUES
 
 CREATE TABLE `mensaje` (
   `id` int(11) NOT NULL,
-  `mensaje` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `enviado_id` int(11) NOT NULL,
   `recibidos_id` int(11) NOT NULL,
+  `mensaje` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -87,9 +82,8 @@ CREATE TABLE `mensaje` (
 -- Volcado de datos para la tabla `mensaje`
 --
 
-INSERT INTO `mensaje` (`id`, `mensaje`, `enviado_id`, `recibidos_id`, `fecha`) VALUES
-(1, 'Mensaje de prueba 2', 1, 1, '2022-02-18 15:40:19'),
-(2, 'Mensaje de prueba 2', 1, 1, '2022-02-18 20:10:32');
+INSERT INTO `mensaje` (`id`, `enviado_id`, `recibidos_id`, `mensaje`, `fecha`) VALUES
+(4, 1, 7, 'Mensaje de prueba 2', '2022-05-30 12:49:46');
 
 -- --------------------------------------------------------
 
@@ -107,11 +101,11 @@ CREATE TABLE `modalidad` (
 --
 
 INSERT INTO `modalidad` (`id`, `modalidad`) VALUES
-(1, 'Solitario'),
-(2, 'Duos'),
-(3, 'Trios'),
+(1, 'Solitarío'),
+(2, 'Dúos'),
+(3, 'Tríos'),
 (4, 'Escuadrones'),
-(5, 'MTL');
+(6, 'MTL');
 
 -- --------------------------------------------------------
 
@@ -121,10 +115,10 @@ INSERT INTO `modalidad` (`id`, `modalidad`) VALUES
 
 CREATE TABLE `opinion` (
   `id` int(11) NOT NULL,
-  `texto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fecha` date NOT NULL,
   `torneo_id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL
+  `usuario_id` int(11) NOT NULL,
+  `texto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -147,8 +141,8 @@ INSERT INTO `plataforma` (`id`, `plataforma`) VALUES
 (2, 'XBOX'),
 (3, 'PC'),
 (4, 'Nintendo Switch'),
-(5, 'Android'),
-(6, 'todas');
+(5, 'Andriod'),
+(6, 'Todas las plataformas');
 
 -- --------------------------------------------------------
 
@@ -164,23 +158,24 @@ CREATE TABLE `torneo` (
   `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `descripcion` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `imagen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `fecha` datetime NOT NULL
+  `fecha` datetime NOT NULL,
+  `retransmision` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `codigo` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ganador` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `torneo`
 --
 
-INSERT INTO `torneo` (`id`, `usuario_id`, `modalidad_id`, `plataforma_id`, `nombre`, `descripcion`, `imagen`, `fecha`) VALUES
-(1, 1, 4, 6, 'Hic Dolores Consequatur', 'Quia asperiores vel ut. Blanditiis consequatur sint vel mollitia. Dolore numquam commodi architecto est.', 'bc4aefd6-43a6-3f8d-976b-d8d0d60b63e1.jpg', '2022-02-22 22:07:51'),
-(2, 1, 2, 4, 'Ad Deserunt Et', 'Eaque facilis alias fuga deserunt magni quisquam praesentium. Dolor adipisci atque amet. Architecto non rerum aut facilis inventore dolores natus.', '9da6ce0e-d0ba-3cfd-a6dc-753ace8e981b.jpg', '2022-02-15 15:47:53'),
-(3, 1, 4, 1, 'Assumenda Cupiditate Consequatur', 'Est repudiandae vero qui nisi ut officia rerum. Quaerat optio ipsum aliquam. Rerum deleniti omnis modi placeat iure odit culpa sed. Nisi molestias voluptatem voluptatem quisquam ut quas enim.', 'f988742b-3a5d-35e6-a43a-d706ab9f41bd.jpg', '2022-02-18 01:19:43'),
-(4, 1, 2, 4, 'Est Ut Cum', 'Libero veritatis asperiores ipsum nostrum. Beatae debitis est recusandae aut optio optio dolore ullam. Magni unde quo sint consectetur ipsam a animi. Magni ea velit iusto qui.', 'a5bb3403-8f1e-3876-b5ab-750f850eb49e.jpg', '2022-02-19 04:16:44'),
-(6, 1, 5, 4, 'Repellendus Qui Tenetur', 'Ut voluptate labore libero quod temporibus. Excepturi aut tempore et sed sint. Non tenetur voluptates suscipit dolorum dolore. Eius ipsum sunt blanditiis officia.', '65bfabbe-f52f-3b24-843e-fbb3e378f210.png', '2022-02-14 08:33:07'),
-(7, 1, 2, 3, 'Consectetur Fugit Aliquid', 'Voluptatem id doloribus ullam aut optio. Non eaque illo explicabo qui. Quos accusamus architecto aut qui magnam magni saepe. Quo enim voluptatem explicabo reiciendis reprehenderit facilis molestias.', '12529dc8-fe32-3b84-b1de-6c4282c95bf4.jpg', '2022-02-15 04:33:19'),
-(8, 1, 1, 4, 'Reprehenderit Rerum Molestiae', 'Suscipit dignissimos minus sapiente nobis minima dolor. Odio quia consequatur aut adipisci. Ipsa distinctio quisquam doloremque iusto. Nihil hic fugit qui architecto.', 'b8b7d934-e2f7-3517-be47-1fae35e4f153.jpg', '2022-03-03 22:15:20'),
-(9, 1, 2, 4, 'Autem Incidunt Eos', 'Aspernatur et itaque aut quam eos tenetur. Nihil assumenda magni commodi quaerat. Quia ratione molestiae minima cumque dolores aspernatur accusamus.', 'f9a0308b-326a-3fca-99ce-f8082db96091.jpg', '2022-02-24 00:25:36'),
-(10, 1, 5, 2, 'Iste Et Aliquam', 'Qui fuga aut ex eum dolorum molestiae. Et sit unde voluptatibus molestiae error aut explicabo. Consectetur necessitatibus ullam sunt voluptatem atque nisi ab commodi.', 'a58e6509-954c-39cf-bdf3-7bc2da3fad70.jpg', '2022-02-16 13:24:07');
+INSERT INTO `torneo` (`id`, `usuario_id`, `modalidad_id`, `plataforma_id`, `nombre`, `descripcion`, `imagen`, `fecha`, `retransmision`, `codigo`, `ganador`) VALUES
+(5, 1, 1, 6, 'LA PEGO CUP tgt', 'Copa para todos los residentes de pego para que el mejor de la Localidad demuestre que el es el mejor !', 'uzrbdo7oyvpvhufyk4b6fh-6291569991148451778660.jpg', '2022-06-14 10:00:00', 'https://youtu.be/N2i6C0ZELcc', 'Q123', NULL),
+(6, 1, 2, 6, 'COPA DE ORO', 'La copa de oro indica que el dúo que mas bajas haga en las partidas es el ganador ! A por todas !', 'epic-game-fortnite-at-2000x1270-629156dd04473605426764.jpg', '2022-06-15 11:00:00', NULL, 'Q123', NULL),
+(7, 1, 3, 6, 'COPA DE LA MARINA ALTA', 'El mejor equipo de la marina alta gana, cada top, cada baja y cada movimiento cuenta.', 'uzrbdo7oyvpvhufyk4b6fh-629157207e14a304385254.jpg', '2022-06-16 18:00:00', NULL, 'S234', NULL),
+(8, 1, 2, 1, 'COPA PLAY STATION', 'Copa solo para jugadores de play station, en dúos', 'l-l-ln-629157565ee33411345696.png', '2022-07-16 16:00:00', NULL, 'F456', 'ALEX'),
+(9, 1, 2, 6, 'FNCS IV', 'FNCS IV', 'l-n-ln-ln-nl-6291577be1dab379932564.png', '2022-06-14 09:00:00', NULL, 'FNCS', 'Josep'),
+(10, 1, 2, 2, 'LA PEGO CUP 2022', 'Nueva copa para los residentes de Pego ! Que gane el mejor', 'il-film-di-fortnite-potrebbe-essere-realta-epic-games-vuole-espandersi-gamesoul-629157cc82ab2513053839.jpg', '2022-06-14 17:45:00', NULL, 'PEGO', NULL),
+(11, 1, 3, 1, 'ASIAN CUP', 'Copa para jugar contra los de la región de Ásia', 'maxresdefault-6291580a39003552333213.jpg', '2022-06-14 09:00:00', NULL, 'asin', NULL);
 
 -- --------------------------------------------------------
 
@@ -194,15 +189,22 @@ CREATE TABLE `usuario` (
   `correo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `contrasenya` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `foto` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `cuenta` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `directo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cuenta_sony` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cuenta_microsoft` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cuenta_epic` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `retranmision` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nombre`, `correo`, `contrasenya`, `foto`, `role`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$13$U4og1XXGQ/YnLtkixaqqP.V16SDUErBpuOhGvy8FZp/FJAVprodHC', 'icon-620fb2dc9cb4e214379275.png', 'ROLE_ADMIN');
+INSERT INTO `usuario` (`id`, `nombre`, `correo`, `contrasenya`, `foto`, `role`, `cuenta`, `directo`, `cuenta_sony`, `cuenta_microsoft`, `cuenta_epic`, `retranmision`) VALUES
+(1, 'Daveind YT', 'admin@gmail.com', '$2y$13$nvphzr0XeLYsV0R.JlSyr.gZxm8DBd9Yb22/kNFUX9LLwceXLYPQ2', 'icon-6293888dd7260309953912.png', 'ROLE_ADMIN', 'daveind', 'daveind', 'daveind', 'Daveind YT', 'daveind ʸᵗ ツ', NULL),
+(7, 'TheKillerMine', 'TheKillerMine@gmail.com', '$2y$13$sQZqxZaUSCfBLIuzF7yo6.i2AmCftxn0P8dBGyvS9vU.7w1M.2nwy', NULL, 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -273,19 +275,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `inscripcion`
 --
 ALTER TABLE `inscripcion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `mensaje`
 --
 ALTER TABLE `mensaje`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `modalidad`
 --
 ALTER TABLE `modalidad`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `opinion`
@@ -303,13 +305,13 @@ ALTER TABLE `plataforma`
 -- AUTO_INCREMENT de la tabla `torneo`
 --
 ALTER TABLE `torneo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

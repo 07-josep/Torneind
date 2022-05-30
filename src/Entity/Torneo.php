@@ -141,6 +141,11 @@ class Torneo
      */
     private $codigo;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $ganador;
+
 
     public function __construct()
     {
@@ -304,6 +309,18 @@ class Torneo
     public function setCodigo(string $codigo): self
     {
         $this->codigo = $codigo;
+
+        return $this;
+    }
+
+    public function getGanador(): ?string
+    {
+        return $this->ganador;
+    }
+
+    public function setGanador(?string $ganador): self
+    {
+        $this->ganador = $ganador;
 
         return $this;
     }

@@ -34,8 +34,11 @@
                 </tr>
                 <tr>
                     <th>Ganador</th>
-                    <td></td>
+                    {% if (torneo.ganador) %}
+                    <td>{{ torneo.ganador }}</td>
+                    {% else %}
                     <td>El torneo aún no ha terminado.</td>
+                    {% endif %}
                 </tr>
                 </tbody>
             </table>

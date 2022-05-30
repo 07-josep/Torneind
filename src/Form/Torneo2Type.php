@@ -18,12 +18,11 @@ class Torneo2Type extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('ganador', EntityType::class,
-                ['class' => Inscripcion::class,
-                    'choice_label' => 'tagname',
-                    'placeholder' => 'Seleciona el ganador',
-                    'required' => true,
-                ]);
+            ->add('ganador', TextType::class, [
+                'required' => true,
+
+            ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void

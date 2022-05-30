@@ -111,8 +111,9 @@ class TorneoController extends AbstractController
     /**
      * @Route("/winer/{id}", name="torneo_winer", methods={"GET", "POST"})
      */
-    public function winer(Request $request, Torneo $torneo, EntityManagerInterface $entityManager): Response
+    public function winer(Request $request, Torneo $torneo, EntityManagerInterface $entityManager, InscripcionRepository $inscripcions): Response
     {
+        $inscripcions->findBy(["torneo" =>$torneo]);
         $form = $this->createForm(Torneo2Type::class, $torneo);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -125,7 +126,7 @@ class TorneoController extends AbstractController
             return $this->redirectToRoute('torneo_index', [], Response::HTTP_SEE_OTHER);
         }
         return $this->renderForm('torneo/win.html.twig', [
-            'inscripcions' => $torneo->getInscripcions(),
+            'inscripcions' => $inscripcions,
             'torneo' => $torneo,
             'form' => $form,
         ]);
