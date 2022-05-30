@@ -113,12 +113,11 @@ class TorneoController extends AbstractController
      */
     public function winer(Request $request, Torneo $torneo, EntityManagerInterface $entityManager): Response
     {
-
         $form = $this->createForm(Torneo2Type::class, $torneo);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($torneo);
-            $entityManager->flush();
+           $entityManager->flush();
             $this->addFlash(
                 'success',
                 '¡ Ganador asignado correctamente !'

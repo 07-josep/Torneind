@@ -141,7 +141,6 @@ class Torneo
      */
     private $codigo;
 
-    private $ganador;
 
     public function __construct()
     {
@@ -310,17 +309,5 @@ class Torneo
     }
 
 
-    public function getGanador(): ?string
-    {
-        return $this->ganador;
-    }
-
-
-    public function setGanador(?string $ganador): self
-    {
-        $this->ganador = $ganador;
-
-        return $this;
-    }
 
 }

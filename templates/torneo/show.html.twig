@@ -9,7 +9,7 @@
             <img class="img-fluid" src="{{ asset( posters_dir  ~ '/'~ torneo.imagen) }}">
         </div>
         <div class="col-5 text-center">
-            <h1 class="texto-no-torneos">Ver torneo</h1>
+            <h1 class="texto-no-torneos">Ver torneo </h1>
             <table class="table">
                 <tbody>
                 <tr>
@@ -34,11 +34,8 @@
                 </tr>
                 <tr>
                     <th>Ganador</th>
-                    {% if (torneo.ganador) %}
-                    <td>{{ torneo.ganador }}</td>
-                    {% else %}
+                    <td></td>
                     <td>El torneo aún no ha terminado.</td>
-                    {% endif %}
                 </tr>
                 </tbody>
             </table>
