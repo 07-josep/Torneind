@@ -1525,6 +1525,13 @@ h4.card-tienda-name {
     font-size: 20px;
 }
 
+.texto-pay{
+    color: #000000;
+    font-family: 'Fortnite';
+    font-size: 50px;
+
+}
+
 p.card-tienda-price {
     background: #000724;
     perspective: 800px;
@@ -1576,8 +1583,8 @@ p.card-tienda-price>img {
 /*ESTILOS PAGO--------------------------------------------------------------------------------------------------------*/
 :root {
     --primary-light: #c2c1c1;
-    --primary: #655dff;
-    --primary-dark: #4f46f8;
+    --primary: #ff5e5e;
+    --primary-dark: #1cd300;
     --secondary: #17c9ff;
     --alert: #ff004c;
     --greyLight-1: #d2d7db;
@@ -2221,5 +2228,6 @@ p.card-tienda-price>img {
         width: 75%;
         height: 30%;
     }
-
 }
+
+
