@@ -190,4 +190,12 @@ class HomeController extends AbstractController
     {
         return $this->render('Others/compartir.html.twig');
     }
+
+    /**
+     * @Route("/pay", name="pay")
+     */
+    public function pay(): Response
+    {
+        return $this->render('Tienda/pay.html.twig');
+    }
 }

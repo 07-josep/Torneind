@@ -59,6 +59,7 @@ security:
          - { path: ^/vinculation-account, roles: ROLE_USER }
          - { path: ^/vinculation-stream, roles: ROLE_USER }
          - { path: ^/chat, roles: ROLE_USER }
+         - { path: ^/pay, roles: ROLE_USER }
 
     role_hierarchy:
         ROLE_ADMIN:
