@@ -11,7 +11,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="intro")
+     */
+    public function intro(): Response
+    {
+        return $this->render('intro.html.twig');
+    }
+
+
+    /**
+     * @Route("/home", name="home")
      */
     public function home(): Response
     {
@@ -192,7 +201,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/pay", name="pay")
+     * @Route("/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq", name="/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq")
      */
     public function pay(): Response
     {

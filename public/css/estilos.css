@@ -328,7 +328,7 @@ th {
 }
 
 .fotos-ver-torneos {
-    height: 350px;
+    height: 500px;
 }
 
 td {
@@ -1585,13 +1585,13 @@ p.card-tienda-price>img {
 :root {
     --primary-light: #c2c1c1;
     --primary: #ff5e5e;
-    --primary-dark: #1cd300;
+    --primary-dark: #169305;
     --secondary: #17c9ff;
     --alert: #ff004c;
     --greyLight-1: #d2d7db;
     --greyLight-2: #c8dbf0;
-    --greyDark-1: #000000;
-    --greyDark-2: #000000;
+    --greyDark-1: #ffffff;
+    --greyDark-2: #ffffff;
     --card1: #ff5e5e;
     --card2: #000000;
 }
@@ -1770,7 +1770,7 @@ p.card-tienda-price>img {
 }
 
 .form__btn:hover {
-    background: var(--primary-dark);
+    background-image: url("https://static1-us.millenium.gg/articles/4/19/03/4/@/190636-vbucks1-orig-1-article_image_bd-1.jpeg");
 }
 
 .form ion-icon {
@@ -1835,6 +1835,19 @@ p.card-tienda-price>img {
     bottom: 20px;
     color: #EA4C89;
 }
+
+#body-pay {
+    background-color: #25124d;
+    margin: 0;
+    padding: 0;
+}
+
+canvas {
+    position: absolute;
+    z-index: -1;
+    background-image: radial-gradient(#2F1A56, #210F49);
+}
+
 /* Estilos chat-------------------------------------------------------------------------------------------------------*/
 
 *,
@@ -2229,6 +2242,81 @@ p.card-tienda-price>img {
         width: 75%;
         height: 30%;
     }
+
+    .fotos-ver-torneos {
+        height: 250px;
+    }
+
+    .fechas{display: none
+    }
+
+    .fotos-inicio-link{
+        height: 150px;
+    }
+    .fotos-inicio-link2{
+        height: 150px;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
