@@ -207,4 +207,13 @@ class HomeController extends AbstractController
     {
         return $this->render('Tienda/pay.html.twig');
     }
+
+    /**
+     * @Route("/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq_success.refid_5521452", name="/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq_success.refid_5521452")
+     */
+    public function shopsucces(): Response
+    {
+        return $this->render('Tienda/compra_ok.html.twig');
+    }
+
 }

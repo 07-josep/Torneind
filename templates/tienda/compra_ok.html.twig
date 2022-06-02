@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Success  ✅✅{% endblock %}
+{% block body %}
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300|Montserrat' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="row row-compra-ok">
+            <div class="container">
+                <div class="row">
+                    <div class="modalbox success col-sm-8 col-md-6 col-lg-5 center animate">
+                        <div class="icon">
+                            <i class="fas fa-check-circle glyphicon-ok"></i>
+                        </div>
+                        <h1 class="compra-succses">COMPRA CORRECTA</h1>
+                        <p> En breves recibirás un email de confirmación</p>
+                       <a href="{{ path('tienda') }}"><button href="#" role="button" class="redo btn">Oki !</button> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}

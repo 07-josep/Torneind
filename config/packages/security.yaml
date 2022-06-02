@@ -59,7 +59,9 @@ security:
          - { path: ^/vinculation-account, roles: ROLE_USER }
          - { path: ^/vinculation-stream, roles: ROLE_USER }
          - { path: ^/chat, roles: ROLE_USER }
-         - { path: ^/pay, roles: ROLE_USER }
+         - { path: ^/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq, roles: ROLE_USER }
+         - { path: ^/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq_success.refid_5521452, roles: ROLE_USER }
+
 
     role_hierarchy:
         ROLE_ADMIN:

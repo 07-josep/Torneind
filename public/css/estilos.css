@@ -100,6 +100,14 @@ html {
     -webkit-text-stroke: 2px #000000;
 }
 
+.compra-succses{
+    font-family: 'Fortnite';
+    font-size: 40px;
+    text-align: center;
+    -webkit-text-fill-color: #ffffff;
+    -webkit-text-stroke: 2px #4caf50;
+}
+
 .texto-torneind-cabezera{
     animation-duration: 3s;
     animation-name: slidein;
@@ -1842,7 +1850,7 @@ p.card-tienda-price>img {
     padding: 0;
 }
 
-canvas {
+#canvas-pay {
     position: absolute;
     z-index: -1;
     background-image: radial-gradient(#2F1A56, #210F49);
@@ -2258,7 +2266,332 @@ canvas {
     }
 }
 
+/*ESTILOS SHOP CONFIRM------------------------------------------------------------------------------------------------*/
 
+.modalbox.success{
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background: #fff;
+    padding: 25px 25px 15px;
+    text-align: center;
+}
+
+.modalbox.success.animate .icon{
+    -webkit-animation: fall-in 0.75s;
+    -moz-animation: fall-in 0.75s;
+    -o-animation: fall-in 0.75s;
+    animation: fall-in 0.75s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.modalbox.success button,
+.modalbox.success button:active,
+.modalbox.success button:focus{
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    margin-top: 15px;
+    width: 80%;
+    background: transparent;
+    color: #4caf50;
+    border-color: #4caf50;
+    outline: none;
+}
+
+.modalbox.success button:hover,
+.modalbox.success button:active:hover,
+.modalbox.success button:focus:hover{
+    color: #fff;
+    background: #4caf50;
+    border-color: transparent;
+}
+
+.modalbox.success .icon{
+    position: relative;
+    margin: 0 auto;
+    margin-top: -75px;
+    background: #4caf50;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.modalbox.success .icon span{
+    postion: absolute;
+    font-size: 4em;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+.center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    /* stupid browser compat. smh */
+}
+
+.center .change {
+    clearn: both;
+    display: block;
+    font-size: 10px;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+@-webkit-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+@-moz-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+@-o-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+@-webkit-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 25%;
+    }
+}
+
+@-moz-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 25%;
+    }
+}
+
+@-o-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 25%;
+    }
+}
+
+@-moz-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+@-webkit-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+@-o-keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+@keyframes fall-in {
+    0% {
+        -ms-transform: scale(3, 3);
+        -webkit-transform: scale(3, 3);
+        transform: scale(3, 3);
+        opacity: 0;
+    }
+    50% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    60% {
+        -ms-transform: scale(1.1, 1.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        -ms-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+}
+
+@-moz-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+
+@-webkit-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+
+@-o-keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+
+@keyframes plunge {
+    0% {
+        margin-top: -100%;
+    }
+    100% {
+        margin-top: 15%;
+    }
+}
+
+.row-compra-ok{
+    padding-top: 150px;
+    padding-bottom: 370px;
+}
+
+.iconos-font-compra{
+    color: white;
+    height: 500px !important;
+}
 
 
 

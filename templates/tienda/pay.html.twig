@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Gestión usuarios{% endblock %}
+{% block title %}Pagar Objeto{% endblock %}
 {% block body %}
     <style>
         .alert {
@@ -17,7 +17,7 @@
         }
     </style>
     <body id="body-pay">
-    <canvas></canvas>
+    <canvas id="canvas-pay" ></canvas>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 d-flex flex-column flex-lg-row">
@@ -57,7 +57,7 @@
                                     </div>
                                 </div>
                                 <div class="col-6">
-                                    <form class="form">
+                                    <form action="{{ path('/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq_success.refid_5521452') }}" class="form">
                                         <h2>Datos del pago</h2>
 
                                         <div class="form__name form__detail">
@@ -446,20 +446,6 @@
 
         }
         animate();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </script>
     </body>
 {% endblock %}
