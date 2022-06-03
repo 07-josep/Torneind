@@ -762,7 +762,7 @@ body {
         transform: translateY(0%);
     }
 }
-.device {
+.dispositivo {
     display: flex;
     width: 1.5em;
     height: 1.5em;

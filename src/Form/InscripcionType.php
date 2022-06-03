@@ -13,7 +13,9 @@ class InscripcionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+
             ->add('tagname',TextType::class)
+
         ;
     }
 

@@ -18,12 +18,8 @@ class Torneo2Type extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $builder->add('ganador', ChoiceType::class, [
-            'choices'  => [
-                "Crespo" => 'Crespo',
-                "Josep" => 'Josep',
-                "Javi" => 'Javi',
-            ],
+        $builder->add('ganador', TextType::class, [
+            'required' => true,
         ]);
     }
 
