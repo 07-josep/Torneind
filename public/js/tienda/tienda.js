@@ -261,9 +261,7 @@ function especiales() {
 
 
 function comprar(nombre, precio){
-
     localStorage.setItem('nombre', nombre);
     localStorage.setItem('precio', precio);
-
-    window.location.href = "elementoTienda.html";
+    window.location.href = "objeto";
 }

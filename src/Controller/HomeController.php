@@ -200,6 +200,15 @@ class HomeController extends AbstractController
         return $this->render('Others/compartir.html.twig');
     }
 
+
+    /**
+     * @Route("/objeto", name="objeto")
+     */
+    public function objeto(): Response
+    {
+        return $this->render('Tienda/objeto.html.twig');
+    }
+
     /**
      * @Route("/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq", name="/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq")
      */

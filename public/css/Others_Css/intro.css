@@ -607,9 +607,11 @@ body {
 @keyframes hp-color {
     from {
         color: #ff5e5e;
+
     }
     to {
         color: #ff5e5e;
+
     }
 }
 @-webkit-keyframes hp {
