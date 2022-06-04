@@ -3,7 +3,7 @@
 {% block body %}
 
     <script>
-        (function() {
+        (function () {
             var start = new Date;
             start.setHours(2, 0, 0);
 
@@ -20,176 +20,185 @@
                 var hh = pad((remain / 60 / 60) % 60);
                 var mm = pad((remain / 60) % 60);
                 var ss = pad(remain % 60);
-
                 if (hh >= 24) {
                     document.getElementById('f-timer').innerHTML =
                         Math.round(hh / 24) + " day";
-
+                    document.getElementById('d-timer').innerHTML =
+                        Math.round(hh / 24) + " day";
+                    document.getElementById('id-timer').innerHTML =
+                        Math.round(hh / 24) + " day";
                 } else {
                     document.getElementById('f-timer').innerHTML =
                         hh + ":" + mm + ":" + ss;
-
+                    document.getElementById('d-timer').innerHTML =
+                        hh + ":" + mm + ":" + ss;
+                    document.getElementById('id-timer').innerHTML =
+                    hh + ":" + mm + ":" + ss;
                 }
 
-                if(hh == 00 && mm == 00 && ss == 00){
+                if (hh == 00 && mm == 00 && ss == 00) {
                     location.reload();
                 }
 
                 setTimeout(tick, 1000);
             }
+
             document.addEventListener('DOMContentLoaded', tick);
         })();
     </script>
     <div class="container-fluid">
-        <div class="col-12 d-flex flex-column flex-lg-row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <h1 class="titulo-cosmeticos"> TIENDA </h1>
-                <div class="col-12 d-flex flex-column flex-lg-row text-center">
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        <p>
-                            Esta es la pestaña de la tienda, puedes comprar lo que quieras pero ten en cuenta que cada 24 horas se actualiza. Corre y compra algo para lucirlo en el juego
-                        </p>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            <i class="fas fa-info"></i> ¿ Cómo funciona el sistema de pago ?
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Funcionamiento de los pagos</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                <span class="badge bg-dark rounded-pill">1</span> 100 PaVos = 1 €
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                <span class="badge bg-dark rounded-pill">2</span> Una vez dentro del objeto deseado pusa comprar.
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                <span class="badge bg-dark rounded-pill">3</span> Paga con tu targeta y entra al juego a disfrutar del cosmético
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">¡ Entendido !</button>
+        <div class="row">
+            <div class="col-12 d-flex flex-column flex-lg-row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <h1 class="titulo-cosmeticos"> TIENDA </h1>
+                    <div class="col-12 d-flex flex-column flex-lg-row text-center">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <p>
+                                Esta es la pestaña de la tienda, puedes comprar lo que quieras pero ten en cuenta que
+                                cada 24 horas se actualiza. Corre y compra algo para lucirlo en el juego
+                            </p>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                <i class="fas fa-info"></i> ¿ Cómo funciona el sistema de pago ?
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                 aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Funcionamiento de los
+                                                pagos</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <ul class="list-group">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span class="badge bg-dark rounded-pill">1</span> 100 PaVos = 1 €
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span class="badge bg-dark rounded-pill">2</span> Una vez dentro del
+                                                    objeto deseado pusa comprar.
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span class="badge bg-dark rounded-pill">3</span> Paga con tu
+                                                    targeta y entra al juego a disfrutar del cosmético
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">¡
+                                                Entendido !
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-2"></div>
                     </div>
-                    <div class="col-2"></div>
                 </div>
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
         </div>
+
     </div>
 
     <div class="container-fluid">
-        <div class="col-12 d-flex flex-column flex-lg-row">
-            <div class="col-1"></div>
-            <div class="col-10">
+        <div class="row">
+            <div class="col-12 d-flex flex-column flex-lg-row">
+                <div class="col-1"></div>
+                <div class="col-10 fondo-tienda">
 
-                <div class="container-fluid">
-                    <div class="col-12 d-flex flex-column flex-lg-row">
-                        <div class="col-1"></div>
-                        <div class="col-10 count feat">
-                            <div>
-                                <h3>ITEMS DIARIOS</h3>
+                    <div class="container-fluid">
+                        <div class="col-12 d-flex flex-column flex-lg-row">
+                            <div class="col-1"></div>
+                            <div class="col-10 count feat">
+                                <div>
+                                    <h3>ITEMS DIARIOS</h3>
+                                </div>
+                                <div><span id="d-timer"></span></div>
                             </div>
-                            <div><span id="f-timer"></span></div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="col-12 d-flex flex-column flex-lg-row">
-                        <div class="col-1"></div>
-                        <div class="col-10 d-flex flex-column flex-lg-row">
-                            <div class="feature" id="diarios-content">
+                    <div class="container-fluid">
+                        <div class="col-12 d-flex flex-column flex-lg-row">
+                            <div class="col-1"></div>
+                            <div class="col-10 d-flex flex-column flex-lg-row">
+                                <div class="feature" id="diarios-content">
 
 
-                                <!-- Elemento tienda -->
+                                    <!-- Elemento tienda -->
 
 
-
-
-
-                            </div>
-
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                </div>
-                <!-- ITEMS DIARIOS---------------------------------------------------------------------------------------------------------------------------------------->
-                <div class="container-fluid">
-                    <div class="col-12 d-flex flex-column flex-lg-row">
-                        <div class="col-1"></div>
-                        <div class="col-10 count feat">
-                            <div>
-                                <h3>ITEMS DESTACADOS</h3>
-                            </div>
-                            <div><span id="f-timer"></span></div>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="col-12 d-flex flex-column flex-lg-row">
-                        <div class="col-1"></div>
-                        <div class="col-10 d-flex flex-column flex-lg-row">
-                            <div class="feature" id="destacados-content">
-
-
+                                </div>
 
                             </div>
-
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
                     </div>
-                </div>
-
-
-
-
-
-
-                <!-- ITEMS DESTACADOS---------------------------------------------------------------------------------------------------------------------------------------->
-                <div class="container-fluid">
-                    <div class="col-12 d-flex flex-column flex-lg-row">
-                        <div class="col-1"></div>
-                        <div class="col-10 count feat">
-                            <div>
-                                <h3>ITEMS ESPECIALES</h3>
+                    <!-- ITEMS DIARIOS---------------------------------------------------------------------------------------------------------------------------------------->
+                    <div class="container-fluid">
+                        <div class="col-12 d-flex flex-column flex-lg-row">
+                            <div class="col-1"></div>
+                            <div class="col-10 count feat">
+                                <div>
+                                    <h3>ITEMS DESTACADOS</h3>
+                                </div>
+                                <div><span id="id-timer"></span></div>
                             </div>
-                            <div><span id="f-timer"></span></div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="col-12 d-flex flex-column flex-lg-row">
-                        <div class="col-1"></div>
-                        <div class="col-10 d-flex flex-column flex-lg-row">
-                            <div class="feature" id="especiales-content">
+                    <div class="container-fluid">
+                        <div class="col-12 d-flex flex-column flex-lg-row">
+                            <div class="col-1"></div>
+                            <div class="col-10 d-flex flex-column flex-lg-row">
+                                <div class="feature" id="destacados-content">
 
 
-
-
+                                </div>
                             </div>
+                            <div class="col-1"></div>
                         </div>
-                        <div class="col-1"></div>
+                    </div>
+                    <!-- ITEMS DESTACADOS---------------------------------------------------------------------------------------------------------------------------------------->
+                    <div class="container-fluid">
+                        <div class="col-12 d-flex flex-column flex-lg-row">
+                            <div class="col-1"></div>
+                            <div class="col-10 count feat">
+                                <div>
+                                    <h3>ITEMS ESPECIALES</h3>
+                                </div>
+                                <div><span id="f-timer"></span></div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="col-12 d-flex flex-column flex-lg-row">
+                            <div class="col-1"></div>
+                            <div class="col-10 d-flex flex-column flex-lg-row">
+                                <div class="feature" id="especiales-content">
+
+
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col-1"></div>
             </div>
 
-            <div class="col-1"></div>
         </div>
+
     </div>
     <script src="{{ asset('/js/tienda/tienda.js') }}"></script>
 {% endblock %}

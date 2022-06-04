@@ -1331,7 +1331,7 @@ p.que-es {
 }
 
 .shadow {
-    background: radial-gradient(#a5a5a5, #6f6f6f);
+    background: radial-gradient(#a5a5a5, #000000);
 }
 
 .epic {
@@ -2332,6 +2332,7 @@ p.card-tienda-price>img {
 }
 
 #compra-ok{
+    background-repeat: no-repeat;
     background-image: url("../fotos-web/general/compraok.jpg");
 }
 

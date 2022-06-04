@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2022 a las 20:07:37
+-- Tiempo de generación: 05-06-2022 a las 00:41:23
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -77,13 +77,6 @@ CREATE TABLE `mensaje` (
   `mensaje` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `mensaje`
---
-
-INSERT INTO `mensaje` (`id`, `enviado_id`, `recibidos_id`, `mensaje`, `fecha`) VALUES
-(4, 1, 7, 'Mensaje de prueba 2', '2022-05-30 12:49:46');
 
 -- --------------------------------------------------------
 
@@ -172,7 +165,7 @@ INSERT INTO `torneo` (`id`, `usuario_id`, `modalidad_id`, `plataforma_id`, `nomb
 (5, 1, 1, 6, 'LA PEGO CUP tgt', 'Copa para todos los residentes de pego para que el mejor de la Localidad demuestre que el es el mejor !', 'uzrbdo7oyvpvhufyk4b6fh-6291569991148451778660.jpg', '2022-06-14 10:00:00', 'https://youtu.be/N2i6C0ZELcc', 'Q123', NULL),
 (6, 1, 2, 6, 'COPA DE ORO', 'La copa de oro indica que el dúo que mas bajas haga en las partidas es el ganador ! A por todas !', 'epic-game-fortnite-at-2000x1270-629156dd04473605426764.jpg', '2022-06-15 11:00:00', NULL, 'Q123', NULL),
 (7, 1, 3, 6, 'COPA DE LA MARINA ALTA', 'El mejor equipo de la marina alta gana, cada top, cada baja y cada movimiento cuenta.', 'uzrbdo7oyvpvhufyk4b6fh-629157207e14a304385254.jpg', '2022-06-16 18:00:00', NULL, 'S234', NULL),
-(8, 1, 2, 1, 'COPA PLAY STATION', 'Copa solo para jugadores de play station, en dúos', 'l-l-ln-629157565ee33411345696.png', '2022-07-16 16:00:00', NULL, 'F456', 'ALEX'),
+(8, 1, 2, 1, 'COPA PLAY STATION', 'Copa solo para jugadores de play station, en dúos', 'l-l-ln-629157565ee33411345696.png', '2022-07-16 16:00:00', NULL, 'F456', 'Hola'),
 (9, 1, 2, 6, 'FNCS IV', 'FNCS IV', 'l-n-ln-ln-nl-6291577be1dab379932564.png', '2022-06-14 09:00:00', NULL, 'FNCS', 'Josep'),
 (10, 1, 2, 2, 'LA PEGO CUP 2022', 'Nueva copa para los residentes de Pego ! Que gane el mejor', 'il-film-di-fortnite-potrebbe-essere-realta-epic-games-vuole-espandersi-gamesoul-629157cc82ab2513053839.jpg', '2022-06-14 17:45:00', NULL, 'PEGO', NULL),
 (11, 1, 3, 1, 'ASIAN CUP', 'Copa para jugar contra los de la región de Ásia', 'maxresdefault-6291580a39003552333213.jpg', '2022-06-14 09:00:00', NULL, 'asin', NULL);
@@ -203,8 +196,13 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nombre`, `correo`, `contrasenya`, `foto`, `role`, `cuenta`, `directo`, `cuenta_sony`, `cuenta_microsoft`, `cuenta_epic`, `retranmision`) VALUES
-(1, 'Daveind YT', 'admin@gmail.com', '$2y$13$nvphzr0XeLYsV0R.JlSyr.gZxm8DBd9Yb22/kNFUX9LLwceXLYPQ2', 'icon-6293888dd7260309953912.png', 'ROLE_ADMIN', 'daveind', 'daveind', 'daveind', 'Daveind YT', 'daveind ʸᵗ ツ', NULL),
-(7, 'TheKillerMine', 'TheKillerMine@gmail.com', '$2y$13$sQZqxZaUSCfBLIuzF7yo6.i2AmCftxn0P8dBGyvS9vU.7w1M.2nwy', NULL, 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'Daveind YT', 'admin@gmail.com', '$2y$13$nvphzr0XeLYsV0R.JlSyr.gZxm8DBd9Yb22/kNFUX9LLwceXLYPQ2', 'icon-6293888dd7260309953912.png', 'ROLE_ADMIN', 'daveind', 'daveind', 'daveind', 'Daveind YT', 'daveind ʸᵗ ツ', 'https://youtu.be/4r3mxRbN0rk'),
+(7, 'TheKillerMine', 'TheKillerMine@gmail.com', '$2y$13$OgN6l1XaBAjInSXj2jRKLuGf5W5wrO.sJS14GRMnLDmO6Dks6S.gy', 'whatsapp-image-2022-06-04-at-7-21-50-pm-629b951c1d87f666048235.jpeg', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(8, 'MBeer', 'mb@gmail.com', '$2y$13$hD7bl5.btAngjNYAkos0MOJBp5LFX7FORuPZ7dcxsoRkvXyQv77bG', 'img-2386-629a8cb02d664956532489.jpeg', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(9, 'Joan Ortola', 'joanortola@gmail.com', '$2y$13$D0/Zu8oT.tS4NOtzheFEvuQKXdH64s45JknMwHVa4NK0MHvdBMfy6', 'fbi-swat-thermite-rainbow-six-siege-game-wallpaper-2560x1600-629a8d73ab445611258622.jpg', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(10, 'Joan Pons', 'joanpons@gmail.com', '$2y$13$Al6fNE/p7bm9x0LqlpzSuuH9AOxN.pI1SHLdtq9QBD./xPTlxpsqu', 'captura-629b93347dfe5802616013.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(11, 'Masis_', 'masima@gmail.com', '$2y$13$XzLHlc2tGWn05fB/s0Cm7e3dyGqnkv/bzAl1pl.1HHSpmOqNzyHpq', 'fgdfgdfg-629b93b2e0a7e900311444.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(12, 'Sara_1997', 'sararita@gmail.com', '$2y$13$B9pwdNhb68p/kAHqenZg0eJjUoACrDAdab6F5QwHE2shQ9178dKfC', 'captura-629b93ea80217503565769.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -311,7 +309,7 @@ ALTER TABLE `torneo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restricciones para tablas volcadas

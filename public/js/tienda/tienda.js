@@ -182,7 +182,7 @@ function especiales() {
 
 
     fetch('https://fortnite-api.com/v2/shop/br')
-        .then(response => response.json())
+            .then(response => response.json())
         .then(data => data.data.specialFeatured.entries.forEach(element => {
             var divPrincipal = document.getElementById("especiales-content");
 

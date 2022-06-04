@@ -102,7 +102,14 @@
                             <div class="container-fluid">
                                 <div class="row alert alert-warning text-center">
                                     <div class="col-12">
-                                        <h4 class="texto-no-torneos"> ¡ NO HA CREADO CONTENIDO !</h4>
+                                        <h4 class="texto-no-torneos">
+                                            {% if (usuario.directo) %}
+                                                <iframe width="1280" height="720" src="{{ usuario.directo }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            {% else %}
+                                                <h1 class="texto-no-torneos text-danger"> ¡ NO ha creado contenido ! </h1>
+                                            {% endif %}
+
+                                        </h4>
                                     </div>
                                 </div>
                             </div>
