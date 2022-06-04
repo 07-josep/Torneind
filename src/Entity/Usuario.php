@@ -70,7 +70,7 @@ class Usuario implements UserInterface, PasswordAuthenticatedUserInterface, Seri
      * @Vich\UploadableField(mapping="movies_poster", fileNameProperty="foto")
      * @var File
      * @Assert\File(
-     *     maxSize = "1024k",
+     *     maxSize = "3024k",
      *     mimeTypes = {"image/jpg", "image/jpeg", "image/png"},
      *     mimeTypesMessage = "La foto tiene que ser PNG, JPEG,JPG y menor de 1024K"
      * )

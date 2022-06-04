@@ -27,7 +27,8 @@ class UserType extends AbstractType
             ->add('captcha', CaptchaType::class, array(
                 'width' => 200,
                 'height' => 50,
-                'length' => 6,));
+                'length' => 6,)
+    );
     }
 
     public function configureOptions(OptionsResolver $resolver)

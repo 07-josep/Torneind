@@ -3,7 +3,7 @@ const arrayDirectos = [{
     id: 'YT',
     nombrePlataforma: 'Youtube',
     descripcion: 'Iniciar directo mediante Youtube',
-    foto: 'https://www.unpocogeek.com/wp-content/uploads/2017/04/youtube_nuevas_reglas_unpocogeek.com_.jpg',
+    foto: 'https://fondosmil.com/fondo/56704.png',
     pagina: 'https://studio.youtube.com/channel/UCkEDizJjz1V7BKxVvNOOZxg/livestreaming'
 }, {
     id: 'TW',
