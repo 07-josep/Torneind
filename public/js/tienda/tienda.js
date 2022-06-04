@@ -261,5 +261,5 @@ function especiales() {
 function comprar(nombre, precio){
     localStorage.setItem('nombre', nombre);
     localStorage.setItem('precio', precio);
-    window.location.href = "objeto";
+    window.location.href = "/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq";
 }

@@ -1295,35 +1295,35 @@ p.que-es {
 }
 
 .legendary {
-    background: radial-gradient(#ffa64f, #ffa64f);
+    background: radial-gradient(#ff7c00, #ffa64f);
 }
 
 .dark {
-    background: radial-gradient(#a5a5a5, #f021d8);
+    background: radial-gradient(#733285, #f021d8);
 }
 
 .marvel {
-    background: radial-gradient(#a5a5a5, #b72f2f);
+    background: radial-gradient(#b01c1c, #b72f2f);
 }
 
 .dc {
-    background: radial-gradient(#a5a5a5, #4a67b1);
+    background: radial-gradient(#51669d, #4a67b1);
 }
 
 .starwars {
-    background: radial-gradient(#a5a5a5, #142b5a);
+    background: radial-gradient(#193c80, #142b5a);
 }
 
 .gaminglegends {
-    background: radial-gradient(#a5a5a5, #4538b9);
+    background: radial-gradient(#5346c9, #4538b9);
 }
 
 .icon {
-    background: radial-gradient(#a5a5a5, #31a1a1);
+    background: radial-gradient(#2bd2d2, #31a1a1);
 }
 
 .slurp {
-    background: radial-gradient(#a5a5a5, #24e2a4);
+    background: radial-gradient(#2effb7, #24e2a4);
 }
 
 .lava {
@@ -1335,15 +1335,15 @@ p.que-es {
 }
 
 .epic {
-    background: radial-gradient(#a5a5a5, #b553f0);
+    background: radial-gradient(#c26cff, #b553f0);
 }
 
 .rare {
-    background: radial-gradient(#a5a5a5, #29adec);
+    background: radial-gradient(#50baff, #29adec);
 }
 
 .uncommon {
-    background: radial-gradient(#a5a5a5, #5fad1d);
+    background: radial-gradient(#86ee30, #5fad1d);
 }
 
 .common {
@@ -2259,7 +2259,13 @@ p.card-tienda-price>img {
         height: 250px;
     }
 
-    .fechas{display: none
+    .fechas{
+        width: 27% !important;
+    }
+
+    .video{
+        height: 70% !important;
+
     }
 
     .fotos-inicio-link{
@@ -2323,6 +2329,10 @@ p.card-tienda-price>img {
     height: 100px;
     width: 100px;
     border-radius: 50%;
+}
+
+#compra-ok{
+    background-image: url("../fotos-web/general/compraok.jpg");
 }
 
 .modalbox.success .icon span{
@@ -2600,7 +2610,7 @@ p.card-tienda-price>img {
 .button-wrapper {
     height: 100px;
     width: 300px;
-    background: linear-gradient(#4f81ff, #009ed7);
+    background: linear-gradient(#ffffff, #000000);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2617,7 +2627,7 @@ p.card-tienda-price>img {
 .button-wrapper .button-inner {
     height: 75%;
     width: 90%;
-    background: linear-gradient(#73ffe9, #4f81ff);
+    background: linear-gradient(#000000, #ffffff);
     transform: skew(-5deg);
     display: flex;
     align-items: center;
@@ -2643,6 +2653,7 @@ p.card-tienda-price>img {
     font-size: 3rem;
     margin: 0;
 }
+
 
 
 

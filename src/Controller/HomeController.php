@@ -201,13 +201,7 @@ class HomeController extends AbstractController
     }
 
 
-    /**
-     * @Route("/objeto", name="objeto")
-     */
-    public function objeto(): Response
-    {
-        return $this->render('Tienda/objeto.html.twig');
-    }
+
 
     /**
      * @Route("/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq", name="/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq")

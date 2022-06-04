@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 {% block title %}Pagar Objeto{% endblock %}
 {% block body %}
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    </head>
     <style>
         .alert {
             font-family: "Inter", sans-serif;
@@ -25,7 +30,8 @@
                 <div class="col-8">
                     <div class="card-blanca-pago">
                         <div class="card-header text-center texto-pay text-white">
-                            COMPRAR OBJETO
+                            COMPRAR <span id="nombre"></span><br>
+                            POR <span id="precio"> </span> <img height="67px" src="https://image.fnbr.co/price/icon_vbucks.png" />
                         </div>
                         <div class="card-body">
                             <div class="col-12 text-center d-flex flex-column flex-lg-row">
@@ -59,7 +65,6 @@
                                 <div class="col-6">
                                     <form action="{{ path('/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq_success.refid_5521452') }}" class="form">
                                         <h2>Datos del pago</h2>
-
                                         <div class="form__name form__detail">
                                             <label for="name">Nombre completo</label>
                                             <ion-icon name="person-outline"></ion-icon>
@@ -72,7 +77,6 @@
                                                           fill="#FF6A96" />
                                                 </svg> Nombre completo requerido</div>
                                         </div>
-
                                         <div class="form__number form__detail">
                                             <label for="number">Número de tarjeta</label>
                                             <ion-icon name="card-outline"></ion-icon>
@@ -115,6 +119,7 @@
                                                 </svg> CVV inválido</div>
                                         </div>
                                         <button type="submit" class="form__btn">Pagar</button>
+
                                     </form>
                                 </div>
                             </div>
@@ -434,18 +439,33 @@
         }
         init();
 
-        // Animate function
         function animate() {
             requestAnimationFrame(animate);
             c.clearRect(0, 0, cw, ch);
 
-            // Generate globes
             for (let i = 0; i < globeArray.length; i++) {
                 globeArray[i].generate(i);
             }
 
         }
         animate();
+    </script>
+    <script>
+        window.onload = main;
+        function main(){
+
+            cargarDatos();
+        }
+        function cargarDatos(){
+            var nombre = localStorage.getItem("nombre");
+            var precio = localStorage.getItem("precio");
+            var h1Nombre = document.getElementById('nombre');
+            var h1Precio = document.getElementById('precio');
+            var precioTxt = document.createTextNode(precio);
+            var nombreTxt = document.createTextNode(nombre);
+            h1Nombre.appendChild(nombreTxt);
+            h1Precio.appendChild(precioTxt);
+        }
     </script>
     </body>
 {% endblock %}
