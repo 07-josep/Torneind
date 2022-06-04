@@ -1318,7 +1318,7 @@ p.que-es {
     background: radial-gradient(#a5a5a5, #4538b9);
 }
 
-.iconseries {
+.icon {
     background: radial-gradient(#a5a5a5, #31a1a1);
 }
 
@@ -1326,11 +1326,15 @@ p.que-es {
     background: radial-gradient(#a5a5a5, #24e2a4);
 }
 
+.lava {
+    background: radial-gradient(#ff6d15, #d75c19);
+}
+
 .shadow {
     background: radial-gradient(#a5a5a5, #6f6f6f);
 }
 
-.eipc {
+.epic {
     background: radial-gradient(#a5a5a5, #b553f0);
 }
 

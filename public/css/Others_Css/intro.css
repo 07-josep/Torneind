@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Fortnite';
+    src: url('../../fuentes/Fortnite.ttf') format("truetype");
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -709,7 +714,7 @@ body {
     outline: none;
 }
 .text__wrapper {
-    font-family: "Arimo", sans-serif;
+    font-family: "Arimo";
     color: #393A32;
     width: 15.4em;
     height: 4em;
@@ -718,6 +723,7 @@ body {
     animation: text-slide-down 0.4s 5.6s cubic-bezier(0.77, 0, 0.175, 1) both;
 }
 .text--expand {
+    font-family: "Fortnite", sans-serif;
     transform: scaleX(1.23) scaleY(1.12);
 }
 .text__quote {
