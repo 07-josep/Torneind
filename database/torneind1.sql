@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-06-2022 a las 00:41:23
+-- Tiempo de generación: 05-06-2022 a las 17:45:45
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -165,7 +165,7 @@ INSERT INTO `torneo` (`id`, `usuario_id`, `modalidad_id`, `plataforma_id`, `nomb
 (5, 1, 1, 6, 'LA PEGO CUP tgt', 'Copa para todos los residentes de pego para que el mejor de la Localidad demuestre que el es el mejor !', 'uzrbdo7oyvpvhufyk4b6fh-6291569991148451778660.jpg', '2022-06-14 10:00:00', 'https://youtu.be/N2i6C0ZELcc', 'Q123', NULL),
 (6, 1, 2, 6, 'COPA DE ORO', 'La copa de oro indica que el dúo que mas bajas haga en las partidas es el ganador ! A por todas !', 'epic-game-fortnite-at-2000x1270-629156dd04473605426764.jpg', '2022-06-15 11:00:00', NULL, 'Q123', NULL),
 (7, 1, 3, 6, 'COPA DE LA MARINA ALTA', 'El mejor equipo de la marina alta gana, cada top, cada baja y cada movimiento cuenta.', 'uzrbdo7oyvpvhufyk4b6fh-629157207e14a304385254.jpg', '2022-06-16 18:00:00', NULL, 'S234', NULL),
-(8, 1, 2, 1, 'COPA PLAY STATION', 'Copa solo para jugadores de play station, en dúos', 'l-l-ln-629157565ee33411345696.png', '2022-07-16 16:00:00', NULL, 'F456', 'Hola'),
+(8, 1, 2, 1, 'COPA PLAY STATION', 'Copa solo para jugadores de play station, en dúos', 'l-l-ln-629157565ee33411345696.png', '2022-07-16 16:00:00', NULL, 'F456', NULL),
 (9, 1, 2, 6, 'FNCS IV', 'FNCS IV', 'l-n-ln-ln-nl-6291577be1dab379932564.png', '2022-06-14 09:00:00', NULL, 'FNCS', 'Josep'),
 (10, 1, 2, 2, 'LA PEGO CUP 2022', 'Nueva copa para los residentes de Pego ! Que gane el mejor', 'il-film-di-fortnite-potrebbe-essere-realta-epic-games-vuole-espandersi-gamesoul-629157cc82ab2513053839.jpg', '2022-06-14 17:45:00', NULL, 'PEGO', NULL),
 (11, 1, 3, 1, 'ASIAN CUP', 'Copa para jugar contra los de la región de Ásia', 'maxresdefault-6291580a39003552333213.jpg', '2022-06-14 09:00:00', NULL, 'asin', NULL);
@@ -202,7 +202,12 @@ INSERT INTO `usuario` (`id`, `nombre`, `correo`, `contrasenya`, `foto`, `role`, 
 (9, 'Joan Ortola', 'joanortola@gmail.com', '$2y$13$D0/Zu8oT.tS4NOtzheFEvuQKXdH64s45JknMwHVa4NK0MHvdBMfy6', 'fbi-swat-thermite-rainbow-six-siege-game-wallpaper-2560x1600-629a8d73ab445611258622.jpg', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
 (10, 'Joan Pons', 'joanpons@gmail.com', '$2y$13$Al6fNE/p7bm9x0LqlpzSuuH9AOxN.pI1SHLdtq9QBD./xPTlxpsqu', 'captura-629b93347dfe5802616013.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
 (11, 'Masis_', 'masima@gmail.com', '$2y$13$XzLHlc2tGWn05fB/s0Cm7e3dyGqnkv/bzAl1pl.1HHSpmOqNzyHpq', 'fgdfgdfg-629b93b2e0a7e900311444.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
-(12, 'Sara_1997', 'sararita@gmail.com', '$2y$13$B9pwdNhb68p/kAHqenZg0eJjUoACrDAdab6F5QwHE2shQ9178dKfC', 'captura-629b93ea80217503565769.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL);
+(12, 'Sara_1997', 'sararita@gmail.com', '$2y$13$B9pwdNhb68p/kAHqenZg0eJjUoACrDAdab6F5QwHE2shQ9178dKfC', 'captura-629b93ea80217503565769.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 'Ariana', 'agrand@gmail.com', '$2y$13$rmjAjHFajqvOydKtflFU6us79Q6qattAujVqjYp/remxR9rXzDCpO', '25284-629c80c7d6217454670095.jpg', 'ROLE_ADMIN', NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 'Crespo', 'david.crespo@iesevalorpego.org', '$2y$13$hMZahtHLep/kEJRTMj/yKOE5oWevdw3sh8VPe0ucwa9mMU6.x9mc.', 'crewspo-629cce116effc653370741.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(15, 'Jorda', 'vicent.jorda@iesevalorpego.org', '$2y$13$d6H8n9gI6wa2QPX46VycFewDbYaYG.36wPg6MEHEDvgxN0.wjxYE6', 'homer-simpson-629ccf4f8c9d0653543126.jpg', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 'Donet', 'joan.donet@iesevalorpego.org', '$2y$13$yWYxu1AJPcglarzsyZUbsO8qSgd/B4ohM/xmDSXQKOK4NmleVzTRe', 'homer-simpson-2006-629ccf3b473e8551105838.png', 'ROLE_USER', NULL, NULL, NULL, NULL, NULL, NULL),
+(17, 'Javier Signes', 'javier.signes@iesevalorpego.org', '$2y$13$1F.w35fQyM8FTrWq.SzAWeUBK2cgQJkVTNCrf2N3CQpBprbpYFdtq', 'homer-simpson-2006-629ccf7529410267895292.png', 'ROLE_ADMIN', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -309,7 +314,7 @@ ALTER TABLE `torneo`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
