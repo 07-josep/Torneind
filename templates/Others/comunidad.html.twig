@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <body id="fondo-comunidad">
+    <body>
+    <video id="mivideo" loop="true" autoplay="autoplay" controls muted>
+        <source src="{{ asset('/fotos-web/general/videos/video2.mp4') }}" type="video/mp4"/>
+    </video>
     <div class="container-fluid mb-5 ">
         <div class="row justify-content-center row-futuro">
-            <div class="col-7">
+            <div class="col-6">
                 <div class="tarjeta-futuro shadow-lg p-3 mb-5 bg-white rounded">
                     <h5 class="texto-no-torneos text-white"> 🚧 PRÓXIMAMENTE EN LA VERSIÓN 1.0... 🛠️</h5>
                     <div class="card-body">
