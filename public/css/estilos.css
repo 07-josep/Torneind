@@ -2635,7 +2635,7 @@ p.card-tienda-price>img {
 .button-wrapper .button-inner p {
     font-size: 3rem;
     color: #000000;
-    margin: 15px 0 0 0;
+    margin: -3px 0 0 0 !important;
     font-family: 'Fortnite';
 
 }
