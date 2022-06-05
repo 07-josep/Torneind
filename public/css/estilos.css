@@ -2640,6 +2640,11 @@ p.card-tienda-price>img {
 
 }
 
+.icon-ok{
+    font-size: 103px;
+    color: white;
+}
+
 .description {
     position: absolute;
     top: 70px;

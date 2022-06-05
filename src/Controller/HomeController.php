@@ -216,6 +216,9 @@ class HomeController extends AbstractController
      */
     public function shopsucces(): Response
     {
+        $this->addFlash(
+            'success',
+            '¡ Gracias por tu compra 😃​🤑​ !');
         return $this->render('Tienda/compra_ok.html.twig');
     }
 

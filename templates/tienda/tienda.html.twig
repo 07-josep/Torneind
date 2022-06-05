@@ -59,6 +59,15 @@
                                 Esta es la pestaña de la tienda, puedes comprar lo que quieras pero ten en cuenta que
                                 cada 24 horas se actualiza. Corre y compra algo para lucirlo en el juego
                             </p>
+                            {# read and display all flash messages #}
+                            {% for label, messages in app.flashes %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ label }} alert-dismissible fade show text-center" role="alert">
+                                        <strong class="text-center">{{ message }}</strong>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
                             <div class="col-12 d-flex flex-column flex-lg-row justify-content-center">
                                 <!-- Button trigger modal -->
                                 <div class="button-wrapper " data-bs-toggle="modal"
