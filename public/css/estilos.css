@@ -2609,9 +2609,9 @@ p.card-tienda-price>img {
 }
 
 .button-wrapper {
-    height: 100px;
-    width: 300px;
-    background: linear-gradient(#ffffff, #000000);
+    height: 80px;
+    width: 750px;
+    background: linear-gradient(#fefb72, #fefca3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2628,17 +2628,16 @@ p.card-tienda-price>img {
 .button-wrapper .button-inner {
     height: 75%;
     width: 90%;
-    background: linear-gradient(#000000, #ffffff);
+    background: linear-gradient(#eee802, #fefb72);
     transform: skew(-5deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .button-wrapper .button-inner p {
     font-size: 3rem;
-    color: #ffffff;
+    color: #000000;
     margin: 15px 0 0 0;
+    font-family: 'Fortnite';
+
 }
 
 .description {
@@ -2646,7 +2645,7 @@ p.card-tienda-price>img {
     top: 70px;
     width: 100vw;
     text-align: center;
-    color: #fff;
+    color: #000000;
     letter-spacing: 1px;
 }
 

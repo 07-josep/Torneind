@@ -33,7 +33,7 @@
                     document.getElementById('d-timer').innerHTML =
                         hh + ":" + mm + ":" + ss;
                     document.getElementById('id-timer').innerHTML =
-                    hh + ":" + mm + ":" + ss;
+                        hh + ":" + mm + ":" + ss;
                 }
 
                 if (hh == 00 && mm == 00 && ss == 00) {
@@ -59,11 +59,18 @@
                                 Esta es la pestaña de la tienda, puedes comprar lo que quieras pero ten en cuenta que
                                 cada 24 horas se actualiza. Corre y compra algo para lucirlo en el juego
                             </p>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
-                                <i class="fas fa-info"></i> ¿ Cómo funciona el sistema de pago ?
-                            </button>
+                            <div class="col-12 flex-column flex-lg-row text-center">
+                                <!-- Button trigger modal -->
+                                <div class="button-wrapper " data-bs-toggle="modal"
+                                     data-bs-target="#exampleModal">
+                                    <div class="button-inner">
+                                        <p>
+                                            Como funcionan los pagos.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                  aria-hidden="true">
@@ -110,6 +117,7 @@
 
     <div class="container-fluid">
         <div class="row">
+
             <div class="col-12 d-flex flex-column flex-lg-row">
                 <div class="col-1"></div>
                 <div class="col-10 fondo-tienda">
