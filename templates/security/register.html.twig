@@ -11,7 +11,7 @@
                     <div class="contenido">
                         <h1 class="texto-no-torneos text-center">¡ REGISTRARSE !</h1>
                         <div class="mb-3 form-label">
-                            {{ form_row(form.nombre) }}
+                            {{ form_row(form.nombre)}}
                         </div>
 
                         <div class="mb-3 form-label">
@@ -28,9 +28,9 @@
                         <div class="mb-3">
                             {{ form_row(form.captcha) }}
                         </div>
-
+                        <p id="missatgeError" class="alert-danger"></p>
                         <div class="text-center mb-3 mt-5 botons">
-                            <button type="submit" class="btn btn-dark boton-empezar-jugar mb-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Empezar a jugar </button>
+                            <button id="enviar" type="submit" class="btn btn-dark boton-empezar-jugar mb-1"><i class="fa fa-sign-in" aria-hidden="true"></i> Empezar a jugar </button>
                         </div>
                     </div>
                     {{ form_end(form) }}
@@ -38,5 +38,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('/js/Validations_js/RegisterValidate.js') }}"></script>
     </body>
 {% endblock %}

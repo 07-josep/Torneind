@@ -18,8 +18,6 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css'>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js'></script>
-
-
 <!-----------------------------------JS I CSS--------------------------------------------------------------------------->
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('/css/estilos.css') }}">
@@ -27,6 +25,7 @@
     {% endblock %}
     {% block javascripts %}
         <script src="{{ asset('/js/chat.js') }}"></script>
+        <script src="{{ asset('/js/RegisterValidate.js') }}"></script>
         <script src="{{ asset('/js/tienda/tienda.js') }}"></script>
         <script src="{{ asset('/js/stats.js') }}"></script>
         <script src="{{ asset('/js/config.js') }}"></script>
