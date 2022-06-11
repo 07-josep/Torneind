@@ -4,7 +4,7 @@ function iniciar() {
     document.getElementById("enviar").addEventListener('click', validar)
 }
 
-//Validar Usuario--------------------------------------------------------------------------------------------------------
+//Validar Usuario-------------------------------------------------------------------------------------------------------
 function validarEquipo() {
     var element = document.getElementById("inscripcion_tagname")
     if (element.value === "") {

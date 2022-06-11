@@ -6,6 +6,7 @@ function iniciar() {
 
 //Validar Nombre--------------------------------------------------------------------------------------------------------
 function validarNombre() {
+    debugger;
     var patternNombre = new RegExp(/^([a-zA-Z ])+$/);
     var element = document.getElementById("user_nombre")
     if (patternNombre.test(element.value)) {
@@ -27,56 +28,50 @@ function validarCorreo() {
     } else {
         if (element.value === "") {
             error2(element, "Debes introducir un correo")
-        } else {
-            error2(element, "El correo no es valído")
-        }
-        return false
-    }
-}
-function validarPassword() {
-    var patternsPass = new RegExp(/^([a-zA-Z])+$/);
-    var element = document.getElementById("user_contrasenya_first")
-    if (patternsPass.test(element.value)) {
-        return true
-    } else {
-        if (element.value === "") {
-            error2(element, "Debes introducir una contraseña")
-        }else {
-            error2(element, "La contrasña no cumple los requisitos")
         }
         return false
     }
 }
 
-function validarPassword2() {
+//Validar Contraseña----------------------------------------------------------------------------------------------------
+function validarContrasena() {
+    var patternPass1 = new RegExp(/^[A-Za-z0-9]{8,18}$/);
     var element = document.getElementById("user_contrasenya_first");
-    var elementR = document.getElementById("user_contrasenya_second");
-
-    if (element.value === "") {
-        error2(element, "Debes repetir una contraseña")
-        return false;
-    }
-    if (element.value !== elementR.value) {
-        error2(element, "La contraseña no es la misma.");
-        return false;
-    }
-    return true;
-}
-
-function validarCaptcha() {
-    var element = document.getElementById("user_captcha")
-    if (element.value === "") {
-        error2(element, "Debes rellenar el captcha")
-        return true
+    if (patternPass1.test(element.value)) {
+        return true;
     } else {
-        return false
+        if (element.value === '') {
+            error2(element, "Error: Debes introducir una contraseña.");
+        } else {
+            error2(element, "Error: La contraseña introducida no es válida.");
+        }
+        return false;
     }
 }
+
+
+//Validar Contraseña----------------------------------------------------------------------------------------------------
+function validarContrasena2() {
+    var patternPass2 = new RegExp(/^[A-Za-z0-9]{8,18}$/);
+    var element = document.getElementById("user_contrasenya_second");
+    if (patternPass2.test(element.value)) {
+        return true;
+    } else {
+        if (element.value === '') {
+            error2(element, "Error: Debes introducir una contraseña.");
+        } else {
+            error2(element, "Error: La contraseña introducida no es válida.");
+        }
+        return false;
+    }
+}
+
+
+
 
 function validar(e) {
-    e.preventDefault();
     esborrarError();
-    if (validarNombre() && validarCorreo() && validarPassword && validarPassword2() && validarCaptcha()) {
+    if (validarNombre() && validarCorreo() && validarContrasena() && validarContrasena2()) {
         return true;
     } else {
         e.preventDefault();
