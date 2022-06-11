@@ -6,7 +6,7 @@ function iniciar() {
 
 //Validar Usuario--------------------------------------------------------------------------------------------------------
 function validarEquipo() {
-    var element = document.getElementById("username ")
+    var element = document.getElementById("inscripcion_tagname")
     if (element.value === "") {
         error2(element, "Debes introducir un nombre")
         return false
