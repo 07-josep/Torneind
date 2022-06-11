@@ -5,29 +5,18 @@ function iniciar() {
 }
 
 //Validar Usuario--------------------------------------------------------------------------------------------------------
-function validarUser() {
+function validarEquipo() {
     var element = document.getElementById("username ")
-        if (element.value === "") {
-            error2(element, "Debes introducir un nombre")
-            return false
-        }
-        return true
-}
-
-//Validar Contraseña--------------------------------------------------------------------------------------------------------
-function validarContra() {
-    var element = document.getElementById("password")
     if (element.value === "") {
-        error2(element, "Debes introducir la contraseña")
+        error2(element, "Debes introducir un nombre")
         return false
     }
     return true
 }
 
-
 function validar(e) {
     esborrarError();
-    if (validarUser() && validarContra()) {
+    if (validarEquipo()) {
         return true;
     } else {
         e.preventDefault();

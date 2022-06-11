@@ -20,7 +20,7 @@
                     {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
                     {{ form_widget(form) }}
                     <div class="col-12 justify-content-between d-flex">
-                        <a><button class="btn btn-primary"><i class="fas fa-check-circle iconos-font"></i>
+                        <a><button id="enviar" class="btn btn-primary"><i class="fas fa-check-circle iconos-font"></i>
                                 {{ button_label|default('Confirmar inscripción') }}</button></a>
                         <a class="btn btn-danger justify-content-center" href="{{ path('torneo_index') }}"> <i class="fas fa-arrow-circle-left iconos-font"></i> Cancelar inscripción</a>
                     </div>
