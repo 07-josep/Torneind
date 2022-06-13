@@ -1,5 +1,6 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
 {% extends 'base.html.twig' %}
-{% block title %}Error 500{% endblock %}
+{% block title %}Error 404{% endblock %}
 {% block body %}
     <body>
     <video id="mivideo" loop="" autoplay="autoplay" controls muted>
@@ -9,11 +10,11 @@
         <div class="col-6 mt-5">
             <div class="card-blanca">
                 <div class="card-header text-center texto-no-torneos">
-                    ¡¿ DONDE TE CREES QUE VAS !?
+                    ¡ PÁGINA NO ENCONTRADA !
                 </div>
                 <div class="card-body">
                     <div class="alert alert-danger text-center texto-profile-ver" role="alert">
-                       ¿ Que vas a entrar o registrate estando ya dentro ?
+                        Esta página no existe.
                     </div>
                     <div class="col-12 justify-content-center d-flex">
                         <a class="btn btn-warning justify-content-center" href="{{ path('home') }}"><i class="fas fa-arrow-circle-left iconos-font"></i> Volver a Inicio</a>

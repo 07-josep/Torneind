@@ -757,6 +757,10 @@ table th {
     max-height: 100%;
 }
 
+#body-error-fatal{
+    background-image: url("../fotos-web/general/foto-error-fatal.jpg");
+}
+
 
 .notthis{
     display: flex;
@@ -1784,6 +1788,8 @@ p.card-tienda-price>img {
 .form__btn:hover {
     background-image: url("https://static1-us.millenium.gg/articles/4/19/03/4/@/190636-vbucks1-orig-1-article_image_bd-1.jpeg");
 }
+
+
 
 .form ion-icon {
     position: absolute;

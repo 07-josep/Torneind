@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Repository\UsuarioRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -106,7 +107,6 @@ class HomeController extends AbstractController
     }
 
 
-
     /**
      * @Route("/nuestroMapa", name="nuestroMapa")
      */
@@ -125,7 +125,7 @@ class HomeController extends AbstractController
         $page = $request->get("page", 1);
         $text = $request->get('nombre');
         $messageText = "Filtro por texto activo : $text.";
-        if ($text != null){
+        if ($text != null) {
             $this->addFlash(
                 'info',
                 $messageText
@@ -135,9 +135,8 @@ class HomeController extends AbstractController
             return $this->render('usuario/list-all-users.html.twig', [
                 'pagination' => $pagination,
             ]);
-        }
-        else
-        $pagination = $usuarioRepository->userListPaginated($request, $paginator);
+        } else
+            $pagination = $usuarioRepository->userListPaginated($request, $paginator);
         return $this->render('usuario/list-all-users.html.twig', [
             'pagination' => $pagination,
         ]);
@@ -152,7 +151,7 @@ class HomeController extends AbstractController
         $page = $request->get("page", 1);
         $text = $request->get('nombre');
         $messageText = "Filtro por texto activo : $text.";
-        if ($text != null){
+        if ($text != null) {
             $this->addFlash(
                 'info',
                 $messageText
@@ -165,12 +164,11 @@ class HomeController extends AbstractController
 
             ]);
 
-        }
-        else
+        } else
             $this->addFlash(
-            'dark',
-            '¡ Elije o busca un jugador al que envíar el mensaje !');
-            $pagination = $usuarioRepository->userListPaginated($request, $paginator);
+                'dark',
+                '¡ Elije o busca un jugador al que envíar el mensaje !');
+        $pagination = $usuarioRepository->userListPaginated($request, $paginator);
         return $this->render('usuario/list-all-users.html.twig', [
             'pagination' => $pagination,
         ]);
@@ -201,8 +199,6 @@ class HomeController extends AbstractController
     }
 
 
-
-
     /**
      * @Route("/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq", name="/pay/shop/buy-object/object-shop-ref.ttfr-46252-llmpq")
      */
@@ -220,6 +216,15 @@ class HomeController extends AbstractController
             'success',
             '¡ Gracias por tu compra 😃​🤑​ !');
         return $this->render('Tienda/compra_ok.html.twig');
+    }
+
+    /**
+     * @Route("/pay/shop/buy-object/object-shop-ref.dark+skully+pack-refid_5521452", name="/pay/shop/buy-object/object-shop-ref.dark+skully+pack-refid_5521452")
+     */
+    public function shopskully(): Response
+    {
+
+        return $this->render('Tienda/compra-skully.html.twig');
     }
 
 }

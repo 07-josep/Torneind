@@ -166,17 +166,22 @@
                         <div class="container-fluid">
                             <div class="row alert alert-info">
                                 <div class="col-12">
-                                    {% if usuario.cuenta %}
-                                        <p class="texto-profile-ver"><i
-                                                    class="fab fa-playstation text-primary"></i> {{ app.user.cuentasony }}
-                                        </p>
-                                        <p class="texto-profile-ver"><i
-                                                    class="fab fa-xbox text-success"></i> {{ app.user.cuentamicrosoft }}
-                                        </p>
-                                        <p class="texto-profile-ver"><i
-                                                    class="fab fa-delicious"></i> {{ app.user.cuentaepic }} </p>
+                                    {% if usuario.cuentasony %}
+                                        <p class="texto-profile-ver"><i class="fab fa-playstation text-primary"></i> {{ app.user.cuentasony }}</p>
                                     {% else %}
-                                        <h4 class="texto-no-torneos"> ¡ NO HAS VINCULADO CUENTAS !</h4>
+                                        <h4 class="texto-profile-ver"> ¡ Cuenta de Sony sin vincular !</h4>
+                                    {% endif %}
+
+                                    {% if usuario.cuentamicrosoft %}
+                                        <p class="texto-profile-ver"><i class="fab fa-playstation text-primary"></i> {{ app.user.cuentamicrosoft }}</p>
+                                    {% else %}
+                                        <h4 class="texto-profile-ver"> ¡ Cuenta de Xbox sin vincular !</h4>
+                                    {% endif %}
+
+                                    {% if usuario.cuentaepic %}
+                                        <p class="texto-profile-ver"><i class="fab fa-playstation text-primary"></i> {{ app.user.cuentaepic }}</p>
+                                    {% else %}
+                                        <h4 class="texto-profile-ver"> ¡ Cuenta de Epic Games sin vincular !</h4>
                                     {% endif %}
                                 </div>
 
