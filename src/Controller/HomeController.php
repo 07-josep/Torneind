@@ -204,7 +204,7 @@ class HomeController extends AbstractController
      */
     public function pay(): Response
     {
-        return $this->render('Tienda/pay.html.twig');
+        return $this->render('tienda/pay.html.twig');
     }
 
     /**
@@ -215,16 +215,8 @@ class HomeController extends AbstractController
         $this->addFlash(
             'success',
             '¡ Gracias por tu compra 😃​🤑​ !');
-        return $this->render('Tienda/compra_ok.html.twig');
+        return $this->render('tienda/compra_ok.html.twig');
     }
 
-    /**
-     * @Route("/pay/shop/buy-object/object-shop-ref.dark+skully+pack-refid_5521452", name="/pay/shop/buy-object/object-shop-ref.dark+skully+pack-refid_5521452")
-     */
-    public function shopskully(): Response
-    {
-
-        return $this->render('Tienda/compra-skully.html.twig');
-    }
 
 }
